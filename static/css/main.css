@@ -143,3 +143,21 @@ form.search input[type=submit] {
 .clearfix:after {
     clear: both;
 }
+
+.entries-calendar caption {
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+.entries-calendar td {
+	padding: 5px;
+}
+.entries-calendar td.entry {
+	background-color: #d52;
+	padding: 0;
+}
+.entries-calendar .entry a {
+	color: #FFF;
+	font-weight: bold;
+	padding: 5px;
+	display: block;
+}
