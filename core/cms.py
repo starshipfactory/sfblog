@@ -8,7 +8,7 @@ from simplecms.template import Template, TemplateBlock
 def setup():
     set_snippet_settings("imagesnippet", "sizes", [
         (100, 100, True, "thumb"),
-        (400, 400, True, "content"),
+        (630, 400, False, "content"),
         (200, 200, True, "content_small"),
     ])
 

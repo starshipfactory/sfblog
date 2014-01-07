@@ -1,0 +1,7 @@
+{% load getattribute %}
+{% with obj.image.sizes|getattribute:obj.size as attrs %}
+<div class="image-snippet {% if obj.style %}image_style_{{ obj.style }}{% endif %}">
+    <img src="{{ attrs.url }}" alt="{{ obj.title }}" title="{{ obj.title }}" 
+            width="{{ attrs.width }}" height="{{ attrs.height }}" />
+</div>
+{% endwith %}

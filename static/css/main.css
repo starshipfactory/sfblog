@@ -4,10 +4,26 @@ a:hover { color: #d52; }
 a:focus { color: #3e5f81; }
 a:active { color: #3e5f81; }
 
+.container {
+	margin: auto;
+	margin-top: 25px;
+	/*margin-left: 25px;
+	margin-right: 25px;*/
+	max-width: 960px;
+	box-shadow: 0 0 10px #000;
+}
+
+.image-snippet img {
+	max-width: 630px;
+	width: 100%;
+	height: auto;
+}
+
 #header {
   overflow: hidden;
 	position: relative;
 }
+
 #header form {
 	width: 30%;
 	box-sizing: border-box;
@@ -15,6 +31,10 @@ a:active { color: #3e5f81; }
 	right: -25px;
 	bottom: 10px;
 }
+
+#header form input[type=text] { width:70% }
+#header form input[type=submit] { width:30% }
+
 .titlelogo {
 	float: left;
 	padding: 25px;
@@ -30,10 +50,11 @@ a:active { color: #3e5f81; }
 	float: left;
 	width: 70%;
 	box-sizing: border-box;
+	padding-left: 25px;
 }
 
 .breadcrumbs {
-	padding-left: 0;
+	padding-left: 25px;
 }
 .breadcrumbs li {
 	display: inline-block;
@@ -50,6 +71,7 @@ a:active { color: #3e5f81; }
 	width: 30%;
 	box-sizing: border-box;
 	padding: 25px;
+	padding-right: 0;
 }
 #sidebar h3:first-child {
 	margin-top: 0;
