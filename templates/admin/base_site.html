@@ -1,0 +1,31 @@
+{% extends "admin/base.html" %}
+{% load i18n simplecms_backend_tags %}
+{% load url from future %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}simplecms/backend/css/backend.css" />
+{% endblock %}
+
+{% block title %}{{ title }} | {% trans 'CMS administration' %}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{% trans 'CMS administration' %}</h1>
+{% endblock %}
+
+{% block nav-global %}
+<div class="simplecms_backend_nav right">
+    <ul>
+        {% get_available_languages as LANGUAGES %}
+        {% get_current_language as LANGUAGE_CODE %}
+        {% for lang, lang_name in LANGUAGES %}
+        <li{% if lang == content_locale %} class="active"{% endif %}>
+            <a href="{% url "simplecms-backend-pages" lang=lang %}">{{ lang_name }}</a>
+        </li>
+        {% endfor %}
+        <li><a href="{% url "orig-admin-index" %}" class="pi">π</a></li>
+    </ul>
+</div>
+<div class="simplecms_backend_nav">
+    {% simplecms_backend_nav %}
+</div>
+{% endblock %}

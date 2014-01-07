@@ -13,6 +13,15 @@ import os
 from os.path import dirname, join, normpath
 BASE_DIR = normpath(join(dirname(dirname(__file__)), ".."))
 
+SIMPLECMS_SETUP_CALLBACK = "core.cms.setup"
+SIMPLECMS_REPLACE_ADMIN_INDEX = True
+
+# zinnia settings
+
+SOUTH_MIGRATION_MODULES = {
+    'zinnia': 'customblog.zinnia_migrations',
+}
+ZINNIA_ENTRY_BASE_MODEL = 'customblog.blog_models.BlogEntry'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -32,17 +41,17 @@ TEMPLATE_DIRS = (
 ALLOWED_HOSTS = []
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-								'django.contrib.auth.context_processors.auth',
-								'django.core.context_processors.i18n',
-								'django.core.context_processors.request',
-								'zinnia.context_processors.version',  # Optional
-								)
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.request',
+    'django.core.context_processors.static',
+    'zinnia.context_processors.version',
+)
 
 
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -50,9 +59,15 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.comments',
+    'django.contrib.admin',
     'tagging',
     'mptt',
+    'oembed',
+    'ckeditor',
+    'core',
+    'simplecms',
     'zinnia',
+    'customblog',  # keep this below zinnia
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,7 +97,11 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'de'
+
+LANGUAGES = (
+    ('de', 'Deutsch'),
+)
 
 TIME_ZONE = 'UTC'
 
@@ -104,6 +123,24 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = join(BASE_DIR, "static_root")
 
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = join(BASE_DIR, "media")
+
 SITE_ID = 1
 
-# vim:sw=4:ts=4:et
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            ['Format', 'Bold', 'Italic'],
+            ['NumberedList', 'BulletedList', 'Table'],
+            ['Image', 'Link', 'Unlink'],
+            ['Undo', 'Redo', 'Copy', 'PasteText'],
+            ['Source', 'Maximize', ]
+        ],
+        'width': 840,
+        'height': 300,
+        'toolbarCanCollapse': False,
+        #'filebrowserBrowseUrl': '/admin/simplegallery/browser/cke/',
+    }
+}
