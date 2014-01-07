@@ -80,6 +80,7 @@ form.search input[type=submit] {
 
 .breadcrumbs {
     padding-left: 25px;
+    font-style: italic;
 }
 .breadcrumbs li {
 	display: inline-block;
@@ -90,6 +91,9 @@ form.search input[type=submit] {
 }
 .breadcrumbs li:last-child:after {
 	content: "";
+}
+.breadcrumbs a:link {
+    text-decoration: none;
 }
 
 .top-navigation {
