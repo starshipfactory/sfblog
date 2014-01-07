@@ -53,6 +53,9 @@ a:active { color: #3e5f81; }
 	box-sizing: border-box;
 	padding: 25px;
 }
+#sidebar h3:first-child {
+	margin-top: 0;
+}
 
 /* Clearfix */
 .clearfix:before,
