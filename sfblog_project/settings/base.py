@@ -67,6 +67,7 @@ INSTALLED_APPS = (
     'core',
     'simplecms',
     'zinnia',
+    'south',
     'customblog',  # keep this below zinnia
 )
 
