@@ -3,3 +3,20 @@
 {% block content %}
 {{ simplecms_page.render.content }}
 {% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+    <li>
+        <a href="/">Startseite</a>
+    </li>
+    {% for page in simplecms_page.get_breadcrumb_pages %}
+        <li>
+            <a href="{{ page.get_absolute_url }}">{{ page }}</a>
+        </li>
+    {% endfor %}
+    <li>
+        <span class="last-crumb">{{ simplecms_page }}</span>
+    </li>
+</ul>
+
+{% endblock %}
