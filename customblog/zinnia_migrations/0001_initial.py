@@ -63,7 +63,7 @@ class Migration(SchemaMigration):
         db.create_table(m2m_table_name, (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
             ('entry', models.ForeignKey(orm['zinnia.entry'], null=False)),
-            ('author', models.ForeignKey(orm['zinnia.author'], null=False))
+            ('author', models.ForeignKey(orm['auth.User'], null=False))
         ))
         db.create_unique(m2m_table_name, ['entry_id', 'author_id'])
 
