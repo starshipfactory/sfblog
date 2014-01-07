@@ -68,7 +68,9 @@
     {% endblock entry-image %}
     {% block entry-content %}
     <div class="entry-content">
-      {{ object_content|safe }}
+        {% for s in object.content_ptr.snippets %}
+        {{ s.render }}
+        {% endfor %}
     </div>
     {% endblock entry-content %}
     {% block continue-reading %}

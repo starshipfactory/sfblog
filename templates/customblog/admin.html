@@ -1,0 +1,40 @@
+{% extends "simplecms/backend/admin_editor.html" %}
+{% load url from future %}
+{% load i18n %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/zinnia-backend.css" />
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url "admin:index" %}">{% trans "Home" %}</a>
+    › <a href="{% url "admin:app_list" app_label="zinnia" %}">Zinnia</a>
+    › <a href="{% url "admin:zinnia_entry_changelist" %}">Einträge</a>
+    {% if obj %}
+    › Bearbeite '{{ obj }}'
+    {% else %}
+    › Eintrag hinzufügen
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block object_tools %}
+{% if obj and obj.get_absolute_url %}
+<li><a href="{{ obj.get_absolute_url }}" target="_blank">{% trans "View on site" %}</a></li>
+{% endif %}
+{% endblock %}
+
+{% block top_form %}
+{{ block.super }}
+<style>
+.add-another { display: none; }
+</style>
+<fieldset class="module aligned">
+    {{ entryform.non_field_errors }}
+    {% for field in entryform %}
+    {% include "simplecms/formrow.html" %}
+    {% endfor %}
+</fieldset>
+{% endblock %}
