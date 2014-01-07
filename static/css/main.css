@@ -3,3 +3,66 @@ a:visited { color: #3e5f81; }
 a:hover { color: #d52; }
 a:focus { color: #3e5f81; }
 a:active { color: #3e5f81; }
+
+#header {
+	border: 1px solid yellow;
+  overflow: hidden;
+	position: relative;
+}
+#header form {
+	width: 30%;
+	box-sizing: border-box;
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+}
+.titlelogo {
+	float: left;
+	padding: 10px;
+}
+.titlecontainer {
+	float: left;
+}
+#header h1 {
+	box-sizing: border-box;
+}
+
+#content {
+	float: left;
+	width: 70%;
+	box-sizing: border-box;
+}
+
+.breadcrumbs {
+	padding-left: 0;
+}
+.breadcrumbs li {
+	display: inline-block;
+}
+.breadcrumbs li:after {
+	content: "»";
+	display: inline-block;
+}
+.breadcrumbs li:last-child:after {
+	content: "";
+}
+#sidebar {
+	float: left;
+	width: 30%;
+	border: 1px solid red;
+	box-sizing: border-box;
+	padding: 25px;
+}
+#sidebar h3:first-child {
+	margin-top: 0;
+}
+
+/* Clearfix */
+.clearfix:before,
+.clearfix:after {
+	content: " "; // 1
+	display: table; // 2
+}
+.clearfix:after {
+    clear: both;
+}

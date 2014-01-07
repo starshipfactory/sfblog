@@ -25,36 +25,25 @@
   </head>
   <body class="zinnia {% block theme-class %}default{% endblock theme-class %} {% block color-class %}blue{% endblock color-class %} {% block sidebar-class %}right-sidebar{% endblock sidebar-class %} {% block body-class %}{% endblock body-class %}">
     <div class="container">
-      <div id="header">
-        <ul class="top-navigation">
-          <li>
-            <a href="{% url 'zinnia_sitemap' %}" title="{% trans "Sitemap" %}" class="sitemap">
-              {% trans "Sitemap" %}
-            </a>
-          </li>
-          <li>
-            <a href="{% url 'zinnia_entry_latest_feed' %}" title="{% trans "RSS Feed of latest entries" %}" class="feeds">
-              {% trans "RSS Feed" %}
-            </a>
-          </li>
-        </ul>
+      <div id="header" class="clearfix">
         <form method="get" action="{% url 'zinnia_entry_search' %}">
           <p>
             <input type="text" value="{% trans "Keywords..." %}" name="pattern" onfocus="this.value=''" />
             <input type="submit" class="submitbutton" value="OK" />
           </p>
         </form>
-        <h1>
-          <a href="{% url 'zinnia_entry_archive_index' %}" title="Zinnia's Weblog" rel="home">
-            Zinnia's Weblogggg
-          </a>
-        </h1>
-        <blockquote>
-          <p>just another thingy</p>
-        </blockquote>
-        {% block breadcrumbs %}{% endblock breadcrumbs %}
+				<img class="titlelogo" src="{% static "images/logo.png" %}" alt="Starship Factory Logo"/>
+				<div class="titlecontainer">
+        	<h1>
+          	<a href="{% url 'zinnia_entry_archive_index' %}" title="Zinnia's Weblog" rel="home">
+            	Starship Factory
+          	</a>
+        	</h1>
+        	<p class="subtitle">Der Makerspace in Basel</p>
+				</div>
       </div>
-      {% block slider %}{% endblock slider %}
+			{% block breadcrumbs %}{% endblock breadcrumbs %}
+     {% block slider %}{% endblock slider %}
       <div id="content" class="hfeed">
         {% block content %}
         <div class="links">
@@ -80,7 +69,19 @@
       </div>
       <div id="sidebar">
         {% block sidebar %}
-        {% endblock sidebar %}
+				{% endblock sidebar %}
+         <ul class="bottom-navigation">
+          <li>
+            <a href="{% url 'zinnia_sitemap' %}" title="{% trans "Sitemap" %}" class="sitemap">
+              {% trans "Sitemap" %}
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'zinnia_entry_latest_feed' %}" title="{% trans "RSS Feed of latest entries" %}" class="feeds">
+              {% trans "RSS Feed" %}
+            </a>
+          </li>
+        </ul>
       </div>
       <div id="footer">
         <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
