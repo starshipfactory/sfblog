@@ -6,13 +6,15 @@ a:active { color: #3e5f81; }
 
 body {
     font-family: Helvetica, Arial, sans-serif;
+    background-color: #ddd;
 }
 
 .container {
 	margin: auto;
 	margin-top: 25px;
 	max-width: 960px;
-	box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 10px #999;
+    background-color: #fff;
 }
 
 .image-snippet img {
@@ -75,7 +77,8 @@ body {
 }
 
 .breadcrumbs {
-	padding-left: 25px;
+    background-image: linear-gradient(#3E5F81, #294564);
+    padding: 10px 25px;
 }
 .breadcrumbs li {
 	display: inline-block;
@@ -86,6 +89,9 @@ body {
 }
 .breadcrumbs li:last-child:after {
 	content: "";
+}
+.breadcrumbs a:link {
+    color: #fff;
 }
 #sidebar {
 	float: left;
@@ -101,8 +107,8 @@ body {
 /* Clearfix */
 .clearfix:before,
 .clearfix:after {
-	content: " "; // 1
-	display: table; // 2
+	content: " ";
+	display: table;
 }
 .clearfix:after {
     clear: both;
