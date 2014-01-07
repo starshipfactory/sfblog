@@ -4,11 +4,13 @@ a:hover { color: #d52; }
 a:focus { color: #3e5f81; }
 a:active { color: #3e5f81; }
 
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 .container {
 	margin: auto;
 	margin-top: 25px;
-	/*margin-left: 25px;
-	margin-right: 25px;*/
 	max-width: 960px;
 	box-shadow: 0 0 10px #000;
 }
@@ -20,20 +22,30 @@ a:active { color: #3e5f81; }
 }
 
 #header {
-  overflow: hidden;
-	position: relative;
+    overflow: hidden;
+    position: relative;
 }
 
 #header form {
 	width: 30%;
 	box-sizing: border-box;
 	position: absolute;
-	right: -25px;
+    right: 0;
 	bottom: 10px;
+    padding: 0 25px;
 }
 
-#header form input[type=text] { width:70% }
-#header form input[type=submit] { width:30% }
+#header form input[type=text] { 
+    width:65%;
+    margin-right: 5%;
+    box-sizing: border-box;
+    float: left;
+}
+#header form input[type=submit] {
+    width:30%;
+    box-sizing: border-box;
+    float: left;
+}
 
 .titlelogo {
 	float: left;
@@ -44,6 +56,10 @@ a:active { color: #3e5f81; }
 }
 #header h1 {
 	box-sizing: border-box;
+}
+#header h1 a:link {
+    font-weight: bold;
+    text-decoration: none;
 }
 
 #content {
