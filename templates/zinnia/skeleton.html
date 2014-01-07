@@ -26,14 +26,8 @@
   <body class="zinnia {% block theme-class %}default{% endblock theme-class %} {% block color-class %}blue{% endblock color-class %} {% block sidebar-class %}right-sidebar{% endblock sidebar-class %} {% block body-class %}{% endblock body-class %}">
     <div class="container">
       <div id="header" class="clearfix">
-        <form method="get" action="{% url 'zinnia_entry_search' %}">
-          <p>
-            <input type="text" value="{% trans "Keywords..." %}" name="pattern" onfocus="this.value=''" />
-            <input type="submit" class="submitbutton" value="OK" />
-          </p>
-        </form>
-				<img class="titlelogo" src="{% static "images/logo.png" %}" alt="Starship Factory Logo"/>
-				<div class="titlecontainer">
+            <img class="titlelogo" src="{% static "images/logo.png" %}" alt="Starship Factory Logo"/>
+            <div class="titlecontainer">
         	<h1>
           	<a href="{% url 'zinnia_entry_archive_index' %}" title="Zinnia's Weblog" rel="home">
             	Starship Factory
@@ -76,6 +70,12 @@
         {% endblock content %}
       </div>
       <div id="sidebar">
+        <form method="get" action="{% url 'zinnia_entry_search' %}" class="search">
+          <p>
+            <input type="text" value="{% trans "Keywords..." %}" name="pattern" onfocus="this.value=''" />
+            <input type="submit" class="submitbutton" value="OK" />
+          </p>
+        </form>
         {% block sidebar %}
 				{% endblock sidebar %}
          <ul class="bottom-navigation">
