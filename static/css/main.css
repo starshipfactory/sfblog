@@ -14,6 +14,10 @@ p {
     line-height: 26px;
 }
 
+strong {
+    color: #666;
+}
+
 h1 {
     font-size: 32px;
     font-weight: bold;
@@ -27,6 +31,7 @@ h2 {
 h3 {
     font-size: 19px;
     font-weight: bold;
+    color: #666;
 }
 
 h1 a, h2 a, h3 a, h4 a {
@@ -35,6 +40,7 @@ h1 a, h2 a, h3 a, h4 a {
 
 .container {
     margin: 25px auto 25px auto;
+    padding-bottom: 25px;
 	max-width: 960px;
 	box-shadow: 0 0 10px #999;
     background-color: #fff;
@@ -190,6 +196,7 @@ form.search input[type=submit] {
 .entries-calendar caption {
 	padding-bottom: 5px;
 	font-weight: bold;
+    color: #666;
 }
 .entries-calendar td {
     text-align: right;
@@ -197,6 +204,7 @@ form.search input[type=submit] {
 }
 .entries-calendar th {
     text-align: right;
+    color: #666;
 }
 .entries-calendar td.entry {
 	background-color: #d52;
