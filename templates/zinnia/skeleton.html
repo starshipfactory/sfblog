@@ -1,4 +1,5 @@
 {% load i18n staticfiles %}
+{% load simplecms_tags %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -26,7 +27,9 @@
 <body class="zinnia {% block theme-class %}default{% endblock theme-class %} {% block color-class %}blue{% endblock color-class %} {% block sidebar-class %}right-sidebar{% endblock sidebar-class %} {% block body-class %}{% endblock body-class %}">
     <div class="container clearfix">
         <div id="header" class="clearfix">
-            <img class="titlelogo" src="{% static "images/logo.png" %}" alt="Starship Factory Logo"/>
+            <a href="/">
+                <img class="titlelogo" src="{% static "images/logo.png" %}" alt="Starship Factory Logo"/>
+            </a>
             <div class="titlecontainer">
                 <h1>
                     <a href="{% url 'zinnia_entry_archive_index' %}" title="Zinnia's Weblog" rel="home">
@@ -36,14 +39,7 @@
                 <p class="subtitle">Der Makerspace in Basel</p>
             </div>
         </div>
-        <ul class="top-navigation clearfix">
-            <li><span class="active-item">Blog</span></li>
-            <li><a href="">Wiki</a></li>
-            <li><a href="">Google+</a></li>
-            <li><a href="">Twitter</a></li>
-            <li><a href="">Facebook</a></li>
-            <li><a href="">Flickr</a></li>
-        </ul>
+        {% simplecms_nav_flat "main" %}
         {% block slider %}{% endblock slider %}
         <div id="content" class="hfeed">
             {% block breadcrumbs %}{% endblock breadcrumbs %}

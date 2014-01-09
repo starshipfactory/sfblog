@@ -1,5 +1,4 @@
 {% extends "zinnia/skeleton.html" %}
-{% load simplecms_tags %}
 {% load zinnia_tags i18n %}
 
 {% block meta-keywords %}{% get_tags as entry_tags %}{{ entry_tags|join:", "}}{% endblock meta-keywords %}
@@ -24,39 +23,28 @@
 {% endblock breadcrumbs %}
 
 {% block sidebar %}
-<h3>Informationen</h3>
-{% simplecms_nav_full "main" %}
 <div id="widget-categories" class="widget">
   <h3>{% trans "Categories" %}</h3>
   {% get_categories %}
-</div>
-<div id="widget-authors" class="widget">
-  <h3>{% trans "Authors" %}</h3>
-  {% get_authors %}
-</div>
-<div id="widget-calendar" class="widget">
-  <h3>{% trans "Calendar" %}</h3>
-  {% get_calendar_entries %}
 </div>
 <div id="widget-tags" class="widget">
   <h3>{% trans "Tags" %}</h3>
   {% get_tag_cloud %}
 </div>
+<h3>Besuch' uns auf…</h3>
+<ul>
+    <li><a href="">Google+</a></li>
+    <li><a href="">Twitter</a></li>
+    <li><a href="">Facebook</a></li>
+    <li><a href="">Flickr</a></li>
+</ul>
+<div id="widget-calendar" class="widget">
+  <h3>{% trans "Calendar" %}</h3>
+  {% get_calendar_entries %}
+</div>
 <div id="widget-recents" class="widget">
   <h3>{% trans "Recent entries" %}</h3>
   {% get_recent_entries %}
-</div>
-<div id="widget-comments" class="widget">
-  <h3>{% trans "Recent comments" %}</h3>
-  {% get_recent_comments %}
-</div>
-<div id="widget-linkbacks" class="widget">
-  <h3>{% trans "Recent linkbacks" %}</h3>
-  {% get_recent_linkbacks %}
-</div>
-<div id="widget-randoms" class="widget">
-  <h3>{% trans "Random entries" %}</h3>
-  {% get_random_entries %}
 </div>
 <div id="widget-populars" class="widget">
   <h3>{% trans "Popular entries" %}</h3>
