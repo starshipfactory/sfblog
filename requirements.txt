@@ -6,7 +6,7 @@ django-localeurl==2.0.1
 django-model-utils==2.0
 django-oembed==0.1.3
 git+ssh://git@gc/gcweb/imagetools@669938f#egg=imagetools
-git+ssh://git@gc/gcweb/simplecms@1bf945f#egg=simplecms
+git+ssh://git@gc/gcweb/simplecms@8395dc4#egg=simplecms
 wsgiref==0.1.2
 git+http://github.com/Fantomas42/django-blog-zinnia.git#egg=django-blog-zinnia
 -e git+git://github.com/dwaiter/django-ckeditor.git@391ad93#egg=ckeditor
