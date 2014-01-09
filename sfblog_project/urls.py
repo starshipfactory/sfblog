@@ -6,7 +6,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^blog/', include('zinnia.urls')),
+    url(r'', include('zinnia.urls')),
     url(r'^comments/', include('django.contrib.comments.urls')),
 )
 
