@@ -136,13 +136,13 @@ CKEDITOR_CONFIGS = {
         'toolbar': [
             ['Format', 'Bold', 'Italic'],
             ['NumberedList', 'BulletedList', 'Table'],
-            ['Image', 'Link', 'Unlink'],
+            ['Link', 'Unlink'],
             ['Undo', 'Redo', 'Copy', 'PasteText'],
             ['Source', 'Maximize', ]
         ],
+        #'format_tags': 'p;h3;h4;h5;pre;', FIXME bug in ckeditor?
         'width': 840,
         'height': 300,
         'toolbarCanCollapse': False,
-        #'filebrowserBrowseUrl': '/admin/simplegallery/browser/cke/',
     }
 }

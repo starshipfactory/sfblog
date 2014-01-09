@@ -23,12 +23,10 @@ class EntryForm(forms.ModelForm):
         self.fields['categories'].widget = RelatedFieldWidgetWrapper(
             self.fields['categories'].widget, rel, admin.site)
         self.fields['tags'].help_text = u"Kommagetrennt"
-        self.fields['excerpt'].help_text = u"Wird in der Listendarstellung angezeigt"
-        self.fields['excerpt'].required = True
         #self.fields['image'].help_text = u"764px breit, 300px hoch;"\
         #    u" falls größer, wird zentral geschnitten"
 
     class Meta:
         model = Entry
-        fields = ['title', 'slug', 'image', 'status', 'excerpt', 'categories',
+        fields = ['title', 'slug', 'image', 'status', 'categories',
                   'tags', 'comment_enabled']

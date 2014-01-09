@@ -24,8 +24,6 @@ def setup():
     ])
 
     set_snippet_settings("textsnippet", "styles", [
-        ("pull_quote", "Pull Quote"),
-        ("right", "Right"),
     ])
 
     set_snippet_settings("videosnippet", "width", 320)
