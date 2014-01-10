@@ -57,6 +57,12 @@ h1 a, h2 a, h3 a, h4 a {
     position: relative;
 }
 
+#footer {
+    overflow: hidden;
+    padding-left: 25px;
+    width: 100%;
+}
+
 form.search {
 	width: 100%;
 	box-sizing: border-box;
@@ -74,6 +80,15 @@ form.search input[type=submit] {
     width:30%;
     box-sizing: border-box;
     float: left;
+}
+
+#comment-form label {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+#comment-form div:first-of-type label {
+    margin-top: 10px;
 }
 
 .titlelogo {
