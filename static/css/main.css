@@ -233,6 +233,8 @@ form.search input[type=submit] {
 }
 
 /* Comments */
+
+/*<li>*/
 .comment {
     padding: 25px;
     counter-increment: my-awesome-counter;
@@ -240,7 +242,9 @@ form.search input[type=submit] {
 .comment:before {
     content: counter(my-awesome-counter);
 }
-.comment-list {
+
+/* <ol>
+#comment-list {
       list-style: none;
       counter-reset: my-awesome-counter;
 }
