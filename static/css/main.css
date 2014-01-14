@@ -234,20 +234,23 @@ form.search input[type=submit] {
 
 /* Comments */
 
+/* <ol> */
+#comment-list {
+      list-style: none;
+      counter-reset: my-awesome-counter;
+}
+
 /*<li>*/
 .comment {
     padding: 25px;
     counter-increment: my-awesome-counter;
 }
 .comment:before {
-    content: counter(my-awesome-counter);
+    content: counter(my-awesome-counter, decimal-leading-zero);
+    font-weight: bold;
+    font-size: 200%;
 }
 
-/* <ol> */
-#comment-list {
-      list-style: none;
-      counter-reset: my-awesome-counter;
-}
 .comment-info {
 /*    background-color: #d52;*/
     font-style: italic;
