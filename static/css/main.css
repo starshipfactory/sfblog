@@ -231,3 +231,11 @@ form.search input[type=submit] {
 	padding: 5px;
 	display: block;
 }
+
+/* Comments */
+.box1 {
+    background-color: #CCC;
+}
+.box2 {
+    background-color: #FFF;
+}
