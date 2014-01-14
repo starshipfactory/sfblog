@@ -233,9 +233,31 @@ form.search input[type=submit] {
 }
 
 /* Comments */
-.box1 {
-    background-color: #CCC;
+.comment {
+    padding: 25px;
+    counter-increment: my-awesome-counter;
 }
+.comment:before {
+    content: counter(my-awesome-counter);
+}
+.comment-list {
+      list-style: none;
+      counter-reset: my-awesome-counter;
+}
+.comment-info {
+/*    background-color: #d52;*/
+    font-style: italic;
+}
+
+.fn {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.box1 {
+    background-color: #EEE;
+}
+
 .box2 {
     background-color: #FFF;
 }
