@@ -248,7 +248,9 @@ form.search input[type=submit] {
 .comment:before {
     content: counter(my-awesome-counter, decimal-leading-zero);
     font-weight: bold;
-    font-size: 200%;
+    width: 100px;
+    margin-left: -100px;
+    display: inline-block;
 }
 
 .comment-info {
