@@ -243,7 +243,7 @@ form.search input[type=submit] {
     content: counter(my-awesome-counter);
 }
 
-/* <ol>
+/* <ol> */
 #comment-list {
       list-style: none;
       counter-reset: my-awesome-counter;
