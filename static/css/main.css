@@ -237,8 +237,8 @@ form.search input[type=submit] {
 /* <ol> */
 #comment-list {
       list-style: none;
-      counter-reset: my-awesome-counter;
-      padding-left: 25px;
+      counter-reset: my-awesome-counter 100;
+      padding-left: 50px;
 }
 
 /*<li>*/
@@ -250,7 +250,7 @@ form.search input[type=submit] {
     content: counter(my-awesome-counter, decimal-leading-zero);
     font-weight: bold;
     width: 100px;
-    margin-left: -50px;
+    margin-left: -75px;
     display: inline-block;
 }
 
