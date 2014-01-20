@@ -238,20 +238,20 @@ form.search input[type=submit] {
 #comment-list {
       list-style: none;
       counter-reset: my-awesome-counter 100;
-      padding-left: 50px;
 }
 
 /*<li>*/
 .comment {
     padding: 25px;
     counter-increment: my-awesome-counter;
+    position: relative;
 }
 .comment:before {
     content: counter(my-awesome-counter, decimal-leading-zero);
     font-weight: bold;
-    width: 75px;
-    margin-left: -75px;
-    display: inline-block;
+    position: absolute;
+    top: 25px;
+    right: 25px;
     font-size: 25px;
     color: #666;
 }
