@@ -238,6 +238,7 @@ form.search input[type=submit] {
 #comment-list {
       list-style: none;
       counter-reset: my-awesome-counter 0;
+      padding: 0;
 }
 
 /*<li>*/
@@ -273,3 +274,28 @@ form.search input[type=submit] {
 .box2 {
     background-color: #FFF;
 }
+
+#pingbacks {
+    padding: 25px;
+}
+
+#trackbacks {
+    padding: 25px;
+}
+
+#comment-form {
+    padding: 25px;
+}
+
+#footer {
+    background-image: linear-gradient(#3E5F81, #294564);
+    color: #fff;
+    padding: 0;
+    padding-left: 25px;
+    margin: 0;
+}
+#footer a:link { color: #FFF; }
+#footer a:visited { color: #FFF; }
+#footer a:hover { color: #FFF; }
+#footer a:focus { color: #FFF; }
+#footer a:active { color: #FFF; }
