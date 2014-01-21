@@ -237,7 +237,7 @@ form.search input[type=submit] {
 /* <ol> */
 #comment-list {
       list-style: none;
-      counter-reset: my-awesome-counter 100;
+      counter-reset: my-awesome-counter 0;
 }
 
 /*<li>*/
@@ -247,7 +247,7 @@ form.search input[type=submit] {
     position: relative;
 }
 .comment:before {
-    content: counter(my-awesome-counter, decimal-leading-zero);
+    content: counter(my-awesome-counter, decimal);
     font-weight: bold;
     position: absolute;
     top: 25px;
