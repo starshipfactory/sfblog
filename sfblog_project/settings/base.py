@@ -146,3 +146,33 @@ CKEDITOR_CONFIGS = {
         'toolbarCanCollapse': False,
     }
 }
+
+LOGGING = {
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {'()': 'django.utils.log.RequireDebugFalse'}
+    },
+    'handlers': {
+        'mail_admins': {
+            'class': 'django.utils.log.AdminEmailHandler',
+            'filters': ['require_debug_false'],
+            'level': 'ERROR'
+        },
+        'console': {
+            'class': 'logging.StreamHandler', 'level': 'DEBUG'
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True
+        },
+        'django_auth_ldap': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+    },
+    'version': 1
+}
