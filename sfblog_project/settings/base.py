@@ -176,3 +176,19 @@ LOGGING = {
     },
     'version': 1
 }
+
+AUTHENTICATION_BACKENDS = (
+    'django_auth_ldap.backend.LDAPBackend',
+)
+
+AUTH_LDAP_SERVER_URI = (
+    "ldaps://auth.glb.internetputzen.com"
+)
+
+import ldap
+from django_auth_ldap.config import LDAPSearch
+
+AUTH_LDAP_BIND_DN = ""
+AUTH_LDAP_BIND_PASSWORD = ""
+AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=People,dc=ngas,dc=ch",
+    ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
