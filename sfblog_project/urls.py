@@ -5,8 +5,10 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(r'', include('zinnia.urls')),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^comments/', include('django.contrib.comments.urls')),
 )
 
