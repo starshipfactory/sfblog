@@ -15,8 +15,8 @@ django-xmlrpc==0.1.5
 gevent==1.0.1
 greenlet==0.4.2
 gunicorn==18.0
-git+ssh://git@gc/gcweb/imagetools@669938f#egg=imagetools
-git+ssh://git@gc/gcweb/simplecms@8395dc4#egg=simplecms
+git+ssh://git@gc-web.de:222/gcweb/imagetools@669938f#egg=imagetools
+git+ssh://git@gc-web.de:222/gcweb/simplecms@8395dc4#egg=simplecms
 wsgiref==0.1.2
 ipython==1.1.0
 psycopg2==2.5.2
