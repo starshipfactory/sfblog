@@ -61,10 +61,13 @@ h1 a, h2 a, h3 a, h4 a {
     overflow: hidden;
     padding-left: 25px;
     width: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 form.search {
 	width: 100%;
+    -moz-box-sizing: border-box;
 	box-sizing: border-box;
     padding: 0;
     overflow: hidden;
@@ -73,11 +76,13 @@ form.search {
 form.search input[type=text] { 
     width:65%;
     margin-right: 5%;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     float: left;
 }
 form.search input[type=submit] {
     width:30%;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     float: left;
 }
@@ -99,6 +104,7 @@ form.search input[type=submit] {
 	float: left;
 }
 #header h1 {
+    -moz-box-sizing: border-box;
 	box-sizing: border-box;
     margin: 0;
     margin-top: 40px;
@@ -114,6 +120,7 @@ form.search input[type=submit] {
 #content {
 	float: left;
 	width: 70%;
+    -moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding-left: 25px;
 }
@@ -177,6 +184,7 @@ form.search input[type=submit] {
 #sidebar {
 	float: left;
 	width: 30%;
+    -moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 0 25px;
 }
