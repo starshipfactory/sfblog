@@ -192,3 +192,9 @@ AUTH_LDAP_BIND_DN = ""
 AUTH_LDAP_BIND_PASSWORD = ""
 AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=People,dc=ngas,dc=ch",
     ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
+
+AUTH_LDAP_USER_FLAGS_BY_GROUP = {
+    "is_active": "cn=starship-factory,ou=groups,dc=ngas,dc=ch",
+    "is_staff": "cn=starship-factory,ou=groups,dc=ngas,dc=ch",
+    "is_superuser": "cn=starship-factory,ou=groups,dc=ngas,dc=ch",
+}
