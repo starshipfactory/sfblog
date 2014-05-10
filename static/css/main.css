@@ -149,33 +149,33 @@ form.search input[type=submit] {
     text-decoration: none;
 }
 
-.top-navigation {
+.nav-main {
     background-image: linear-gradient(#3E5F81, #294564);
     color: #fff;
     padding-left: 0;
     margin: 0;
 }
-.top-navigation li {
+.nav-main li {
     list-style-type: none;
     float: left;
     border-left: 1px solid #294564;
     margin: 0;
 }
-.top-navigation li:first-child {
+.nav-main li:first-child {
 }
-.top-navigation li:last-child {
+.nav-main li:last-child {
     border-right: 1px solid #294564;
 }
-.top-navigation a:link,
-.top-navigation a:visited,
-.top-navigation a:hover,
+.nav-main a:link,
+.nav-main a:visited,
+.nav-main a:hover,
 .active-item {
     color: #fff;
     text-decoration: none;
     padding: 10px 25px;
     display: inline-block;
 }
-.top-navigation a:hover {
+.nav-main a:hover {
     color: #000;
     background-color: #AABCC5;
     background-image: linear-gradient(#CCDEE7, #AABCC5);
