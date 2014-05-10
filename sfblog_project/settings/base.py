@@ -96,6 +96,17 @@ DATABASES = {
     }
 }
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE':'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'sfblog',
+#        'USER': 'sfblog',
+#        'PASSWORD': 'test',
+#        'HOST': '127.0.0.1',
+#        'PORT': '5432',
+#    }
+#}
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -187,6 +198,7 @@ AUTH_LDAP_SERVER_URI = (
 
 import ldap
 from django_auth_ldap.config import LDAPSearch
+from django_auth_ldap.config import PosixGroupType
 
 AUTH_LDAP_BIND_DN = ""
 AUTH_LDAP_BIND_PASSWORD = ""
@@ -198,3 +210,8 @@ AUTH_LDAP_USER_FLAGS_BY_GROUP = {
     "is_staff": "cn=starship-factory,ou=groups,dc=ngas,dc=ch",
     "is_superuser": "cn=starship-factory,ou=groups,dc=ngas,dc=ch",
 }
+
+AUTH_LDAP_GROUP_TYPE = PosixGroupType()
+AUTH_LDAP_GROUP_SEARCH = LDAPSearch("ou=Groups,dc=ngas,dc=ch",
+        ldap.SCOPE_SUBTREE, "(objectClass=posixGroup)"
+        )
