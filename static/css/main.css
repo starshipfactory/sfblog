@@ -182,18 +182,22 @@ form.search input[type=submit] {
 }
 
 .nav-footer {
-   float: left;
-   list-style-type: none;
-   display: inline;
-   padding: 0;
+    float: left;
+    list-style-type: none;
+    display: inline;
+    padding: 0;
+    line-height: 26px;
+    margin-left: 3px;
 }
 
-.nav-footer li{
-   display: inline;
+.nav-footer li {
+    margin-left: 5px;
+    display: inline;
 }
 
-#footer p {
-   float: left;
+.nav-footer li:before {
+    content: "|";
+    display: inline-block;
 }
 
 #sidebar {
@@ -322,3 +326,6 @@ form.search input[type=submit] {
 #footer a:hover { color: #FFF; }
 #footer a:focus { color: #FFF; }
 #footer a:active { color: #FFF; }
+#footer p {
+   float: left;
+}
