@@ -29,7 +29,16 @@ def setup():
     set_snippet_settings("videosnippet", "width", 320)
     set_snippet_settings("videosnippet", "height", 240)
 
+    class BlogDashboardPane(panes.DashboardPane):
+        verbose_name = u"Blog"
+
+        @property
+        def url(self):
+            from django.core.urlresolvers import reverse
+            return reverse("admin:app_list", args=["zinnia"])
+
     add_dashboard_pane(panes.PagesDashboardPane())
+    add_dashboard_pane(BlogDashboardPane())
 
     t = Template(name="Default",
                  slug="default",
