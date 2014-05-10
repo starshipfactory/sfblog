@@ -1,0 +1,23 @@
+[
+    {
+        "pk": 13,
+        "model": "oembed.providerrule",
+        "fields": {
+            "regex": "https?://\\S*.youtube.com/watch\\S*",
+            "endpoint": "http://www.youtube.com/oembed",
+            "name": "YouTube",
+            "format": 1
+        }
+    },
+    {
+        "pk": 62,
+        "model": "oembed.providerrule",
+        "fields": {
+            "regex": "https?://\\S*.youtube.com/watch\\S*",
+            "regex": "http://youtu.be/\\S*",
+            "endpoint": "http://www.youtube.com/oembed",
+            "name": "YouTu.be",
+            "format": 1
+        }
+    }
+]
