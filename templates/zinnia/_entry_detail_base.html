@@ -52,13 +52,16 @@
   {% block entry-body %}
   <div class="entry-body">
     {% block entry-image %}
-    {% if object.image %}
+    {% if object.resized_image %}
     <div class="entry-image">
       <p>
         {% if continue_reading %}
         <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
           {% endif %}
-          <img src="{{ object.image.url }}" alt="{{ object.title }}" class="left" />
+          {% with object.resized_image.sizes.blogtitle as image %}
+          <img src="{{ image.url }}" alt="{{ object.title }}" class="left" 
+              width="{{ image.width }}" height="{{ image.height }}"/>
+          {% endwith %}
           {% if continue_reading %}
         </a>
         {% endif %}

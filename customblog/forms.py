@@ -28,5 +28,5 @@ class EntryForm(forms.ModelForm):
 
     class Meta:
         model = Entry
-        fields = ['title', 'slug', 'image', 'status', 'categories',
+        fields = ['title', 'slug', 'resized_image', 'status', 'categories',
                   'tags', 'comment_enabled']
