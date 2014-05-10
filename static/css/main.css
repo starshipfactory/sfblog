@@ -181,6 +181,21 @@ form.search input[type=submit] {
     background-image: linear-gradient(#CCDEE7, #AABCC5);
 }
 
+.nav-footer {
+   float: left;
+   list-style-type: none;
+   display: inline;
+   padding: 0;
+}
+
+.nav-footer li{
+   display: inline;
+}
+
+#footer p {
+   float: left;
+}
+
 #sidebar {
 	float: left;
 	width: 30%;
