@@ -1,11 +1,9 @@
-<ul class="clearfix nav-{{ nav.slug }}">
 {% for node in nodes %}
     <li>
         <a href="{{ node.get_absolute_url }}"
                 class="{% if node.id == simplecms_page.id or node in simplecms_page.get_ancestors %}active{% endif %}">{{ node.title }}</a>
     </li>
 {% endfor %}
-</ul>
 
 {% comment %} vim:ft=htmldjango
 {% endcomment %}

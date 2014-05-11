@@ -36,8 +36,12 @@
                 <p class="subtitle">Der Makerspace in Basel</p>
             </div>
         </div>
-        {% simplecms_nav_flat "main" %}
+        <ul class="clearfix nav-main">
+            {% simplecms_nav_flat "main" %}
+            <li><a href="https://wiki.starship-factory.ch/">Wiki</a></li>
+        </ul>
         {% block slider %}{% endblock slider %}
+        <br clear="all" />
         <div id="content" class="hfeed">
             {% block breadcrumbs %}{% endblock breadcrumbs %}
             {% block content %}
@@ -85,7 +89,11 @@
             </ul>
         </div>
         <div id="footer">
-                <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %} <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a></p> {% simplecms_nav_flat "footer" %}
+            <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}
+            <ul class="clearfix nav-footer">
+                <li> <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a></li>
+                {% simplecms_nav_flat "footer" %}
+            </ul>
         </div>
     </div>
 </body>
