@@ -13,8 +13,7 @@
         "pk": 62,
         "model": "oembed.providerrule",
         "fields": {
-            "regex": "https?://\\S*.youtube.com/watch\\S*",
-            "regex": "http://youtu.be/\\S*",
+            "regex": "https?://youtu.be/\\S*",
             "endpoint": "http://www.youtube.com/oembed",
             "name": "YouTu.be",
             "format": 1
