@@ -40,9 +40,9 @@ def setup():
     add_dashboard_pane(panes.PagesDashboardPane())
     add_dashboard_pane(BlogDashboardPane())
 
-    t = Template(name="Default",
+    t = Template(name="Standard",
                  slug="default",
-                 desc="default template",
+                 desc="Standard-Template",
                  path="content.html")
-    t.add_block(TemplateBlock(name="content", slug="content"))
+    t.add_block(TemplateBlock(name="Inhalt", slug="content"))
     add_template(t)
