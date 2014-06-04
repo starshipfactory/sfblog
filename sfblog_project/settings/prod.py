@@ -35,6 +35,10 @@ ALLOWED_HOSTS = [
 
 DEBUG = False
 
+# Some mail destinations which hopefully won't eat the mails.
+ADMINS = (('NGAS Admins', 'admins@ngas.ch'),)
+MANAGERS = ADMINS + (('Public Relations', 'pr@lists.starship-factory.ch'),)
+
 DATABASES = {
         'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
