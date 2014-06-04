@@ -40,6 +40,12 @@ ADMINS = (('NGAS Admins', 'admins@ngas.ch'),)
 MANAGERS = ADMINS + (('Public Relations', 'pr@lists.starship-factory.ch'),)
 EMAIL_BACKEND = 'django_sendmail_backend.backends.EmailBackend'
 
+# Some security related settings.
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECRET_KEY = open(environ.get('SFBLOG_CONFIG_PATH') +
+			      '/secret_key').read().strip()
+
 DATABASES = {
         'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
