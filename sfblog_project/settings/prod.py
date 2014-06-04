@@ -38,6 +38,7 @@ DEBUG = False
 # Some mail destinations which hopefully won't eat the mails.
 ADMINS = (('NGAS Admins', 'admins@ngas.ch'),)
 MANAGERS = ADMINS + (('Public Relations', 'pr@lists.starship-factory.ch'),)
+EMAIL_BACKEND = 'django_sendmail_backend.backends.EmailBackend'
 
 DATABASES = {
         'default': {
