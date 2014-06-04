@@ -46,6 +46,10 @@ SESSION_COOKIE_SECURE = True
 SECRET_KEY = open(environ.get('SFBLOG_CONFIG_PATH') +
 			      '/secret_key').read().strip()
 
+# Settings for life behind a reverse proxy.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+USE_X_FORWARDED_HOST = True
+
 DATABASES = {
         'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
