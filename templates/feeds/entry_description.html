@@ -1,1 +1,3 @@
-{{ obj.html_content|safe }}
+{% for s in obj.content_ptr.snippets %}
+{{ s.render }}
+{% endfor %}
