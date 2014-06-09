@@ -231,19 +231,19 @@ form.search input[type=submit] {
     clear: both;
 }
 
-.entries-calendar {
+.entries-calendar, .no-entries-calendar {
     width: 100%;
 }
-.entries-calendar caption {
+.entries-calendar caption, .no-entries-calendar caption {
 	padding-bottom: 5px;
 	font-weight: bold;
     color: #666;
 }
-.entries-calendar td {
+.entries-calendar td, .no-entries-calendar td {
     text-align: right;
 	padding: 5px;
 }
-.entries-calendar th {
+.entries-calendar th, .no-entries-calendar th {
     text-align: right;
     color: #666;
 }
