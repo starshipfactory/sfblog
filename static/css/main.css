@@ -257,6 +257,13 @@ form.search input[type=submit] {
 	padding: 5px;
 	display: block;
 }
+.entries-calendar .prev {
+    text-align: left;
+    padding-left: 0;
+}
+.entries-calendar .next {
+    padding-right: 0;
+}
 
 /* Comments */
 
