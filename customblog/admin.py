@@ -49,5 +49,8 @@ class EntryEditor(AdminSnippetEditor):
 class MyEntryAdmin(EntryAdmin, ContentAdmin):
     editor = EntryEditor()
 
+    def get_title(self, obj):
+        return obj.title
+
 admin.site.unregister(Entry)
 admin.site.register(Entry, MyEntryAdmin)
