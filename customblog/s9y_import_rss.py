@@ -94,9 +94,9 @@ def transform_image_url(url):
         parsed_qs = urlparse.parse_qs(qs)
 
         if height_key in parsed_qs:
-            parsed_qs[height_key] = "10000"
+            parsed_qs[height_key] = "5000"
         if width_key in parsed_qs:
-            parsed_qs[width_key] = "10000"
+            parsed_qs[width_key] = "5000"
 
         qs = urlencode(parsed_qs, doseq=1)
         url = parsed_url._replace(query=qs).geturl()
