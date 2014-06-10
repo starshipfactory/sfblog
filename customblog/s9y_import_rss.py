@@ -124,7 +124,7 @@ def add_redirect(full_old_url, new_path):
 
 def image_cache_path(url):
     key = hashlib.md5(url).hexdigest()
-    if not os.isdir("image_cache"):
+    if not os.path.isdir("image_cache"):
         os.mkdir("image_cache")
     return os.path.join("image_cache", key)
 
