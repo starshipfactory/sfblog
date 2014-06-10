@@ -257,10 +257,12 @@ form.search input[type=submit] {
 	padding: 5px;
 	display: block;
 }
+.no-entries-calendar .prev,
 .entries-calendar .prev {
     text-align: left;
     padding-left: 0;
 }
+.no-entries-calendar .next,
 .entries-calendar .next {
     padding-right: 0;
 }
