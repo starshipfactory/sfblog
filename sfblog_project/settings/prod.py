@@ -60,3 +60,10 @@ DATABASES = {
                 'PORT': open(environ.get('SFBLOG_CONFIG_PATH') + '/pgport').read().strip(),
         }
 }
+
+TEMPLATE_LOADERS = (
+    ('django.template.loaders.cached.Loader', (
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+    )),
+)
