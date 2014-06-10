@@ -141,6 +141,19 @@ ul.paginator li.page, ul.paginator li.ellipsis {
 	display: inline;
 }
 
+ul.archive {
+	list-style-type: none;
+}
+
+ul.archive li {
+	display: inline;
+	margin-right: 10px;
+}
+
+ul.archive li a {
+	text-decoration: none;
+}
+
 .breadcrumbs {
     padding: 0;
     font-style: italic;
