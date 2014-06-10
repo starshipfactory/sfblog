@@ -365,8 +365,9 @@ def import_from_rss(rss_as_bytes):
 
 def main(url_or_fname):
     global _url_cache
-    with open("url_cache.json") as fp:
-        _url_cache = json.load(fp)
+    if os.path.exists("url_cache.json"):
+	with open("url_cache.json") as fp:
+		_url_cache = json.load(fp)
 
     try:
         if url_or_fname.startswith('http'):
