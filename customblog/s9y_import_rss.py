@@ -124,7 +124,7 @@ def add_redirect(full_old_url, new_path):
 
 def image_cache_path(url):
     key = hashlib.md5(url).hexdigest()
-    if not os.isdir("image_cache"):
+    if not os.path.isdir("image_cache"):
         os.mkdir("image_cache")
     return os.path.join("image_cache", key)
 
@@ -365,8 +365,9 @@ def import_from_rss(rss_as_bytes):
 
 def main(url_or_fname):
     global _url_cache
-    with open("url_cache.json") as fp:
-        _url_cache = json.load(fp)
+    if os.path.exists("url_cache.json"):
+	with open("url_cache.json") as fp:
+		_url_cache = json.load(fp)
 
     try:
         if url_or_fname.startswith('http'):
