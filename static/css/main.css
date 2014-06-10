@@ -129,7 +129,7 @@ ul.paginator {
 }
 
 ul.paginator li.index {
-	font-color: #606060;
+	color: #606060;
 	font-size: 10pt;
 }
 
@@ -151,6 +151,15 @@ ul.archive li {
 }
 
 ul.archive li a {
+	text-decoration: none;
+}
+
+div.entry-footer p {
+	font-size: 10pt;
+	color: #404040;
+}
+
+div.entry-footer p a {
 	text-decoration: none;
 }
 
