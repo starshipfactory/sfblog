@@ -282,12 +282,16 @@ def process_image_html_blob(blob):
     img = root.xpath("//img")[0]
     src = img.attrib['src']
     fp = fetch_image(src)
-    return fp, {"title": img.attrib.get("title", "") or img.attrib.get("alt", "")}
+    return fp, {
+        "title": img.attrib.get("title", "") or img.attrib.get("alt", ""),
+        "src": src,
+    }
 
 
 def image_extension(fp):
     from PIL import Image
     i = Image.open(fp)
+    i.load()
     return i.format.lower()
 
 
@@ -317,7 +321,12 @@ def process_html_blob(blob, cms_content):
             ts.save()
         if snippet_type == "image":
             fp, img_attrs = process_image_html_blob(processed)
-            ext = image_extension(fp)
+            try:
+                ext = image_extension(fp)
+            except:
+                print >> sys.stderr, "failed to create ImageSnippet for %s (%s)" % (
+                    img_attrs['src'], fp.name)
+                raise
             isnippet = ImageSnippet()
             isnippet.content = cms_content
             isnippet.order = order
@@ -366,8 +375,8 @@ def import_from_rss(rss_as_bytes):
 def main(url_or_fname):
     global _url_cache
     if os.path.exists("url_cache.json"):
-	with open("url_cache.json") as fp:
-		_url_cache = json.load(fp)
+        with open("url_cache.json") as fp:
+            _url_cache = json.load(fp)
 
     try:
         if url_or_fname.startswith('http'):
