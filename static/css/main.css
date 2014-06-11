@@ -350,15 +350,15 @@ div.entry-footer p a {
 }
 
 #pingbacks {
-    padding: 25px;
+    margin: 25px 0;
 }
 
 #trackbacks {
-    padding: 25px;
+    margin: 25px 0;
 }
 
 #comment-form {
-    padding: 25px;
+    margin: 25px 0;
 }
 
 #footer {
