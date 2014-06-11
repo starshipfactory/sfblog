@@ -5,9 +5,23 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
+from zinnia.sitemaps import TagSitemap, AuthorSitemap, CategorySitemap, EntrySitemap
+from simplecms.sitemap import PageSitemap
+
+sitemaps = {
+    'tags': TagSitemap(),
+    'authors': AuthorSitemap(),
+    'categories': CategorySitemap(),
+    'entries': EntrySitemap(),
+    'pages': PageSitemap(),
+}
+
+
 urlpatterns = patterns(
     '',
     url(r'', include('zinnia.urls')),
+    url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
+        {'sitemaps': sitemaps}),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^comments/', include('django.contrib.comments.urls')),
 )

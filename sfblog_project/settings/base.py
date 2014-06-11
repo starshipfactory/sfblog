@@ -48,7 +48,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'zinnia.context_processors.version',
 )
 
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -61,6 +60,7 @@ INSTALLED_APPS = (
     'django.contrib.comments',
     'django.contrib.admin',
     'django.contrib.redirects',
+    'django.contrib.sitemaps',
     'tagging',
     'mptt',
     'oembed',
