@@ -4,7 +4,7 @@
         "model": "oembed.providerrule",
         "fields": {
             "regex": "https?://\\S*.youtube.com/watch\\S*",
-            "endpoint": "http://www.youtube.com/oembed",
+            "endpoint": "http://www.youtube.com/oembed?scheme=https",
             "name": "YouTube",
             "format": 1
         }
@@ -14,7 +14,7 @@
         "model": "oembed.providerrule",
         "fields": {
             "regex": "https?://youtu.be/\\S*",
-            "endpoint": "http://www.youtube.com/oembed",
+            "endpoint": "http://www.youtube.com/oembed?scheme=https",
             "name": "YouTu.be",
             "format": 1
         }
