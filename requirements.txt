@@ -7,7 +7,7 @@ django-auth-ldap==1.2.0
 django-blog-zinnia==0.14.1
 -e git://github.com/dwaiter/django-ckeditor.git@391ad930ff8f51be7f91943b68ee8df8c58f18ae#egg=django_ckeditor-master
 django-localeurl==2.0.1
-django-model-utils==2.0
+django-model-utils==2.0.3
 django-mptt==0.6.1
 django-oembed==0.1.3
 django_sendmail_backend==0.1.2
