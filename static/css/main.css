@@ -129,7 +129,7 @@ ul.paginator {
 }
 
 ul.paginator li.index {
-	font-color: #606060;
+	color: #606060;
 	font-size: 10pt;
 }
 
@@ -139,6 +139,28 @@ ul.paginator li.page a {
 
 ul.paginator li.page, ul.paginator li.ellipsis {
 	display: inline;
+}
+
+ul.archive {
+	list-style-type: none;
+}
+
+ul.archive li {
+	display: inline;
+	margin-right: 10px;
+}
+
+ul.archive li a {
+	text-decoration: none;
+}
+
+div.entry-footer p {
+	font-size: 10pt;
+	color: #404040;
+}
+
+div.entry-footer p a {
+	text-decoration: none;
 }
 
 .breadcrumbs {
