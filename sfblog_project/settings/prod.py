@@ -58,6 +58,7 @@ DATABASES = {
                 'PASSWORD': open(environ.get('SFBLOG_CONFIG_PATH') + '/pgpassword').read().strip(),
                 'HOST': open(environ.get('SFBLOG_CONFIG_PATH') + '/pgserver').read().strip(),
                 'PORT': open(environ.get('SFBLOG_CONFIG_PATH') + '/pgport').read().strip(),
+                'CONN_MAX_AGE': None,
         }
 }
 
