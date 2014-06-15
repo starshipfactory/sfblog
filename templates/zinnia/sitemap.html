@@ -34,9 +34,7 @@
     <li>
       <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
       - {{ entry.creation_date|date:"SHORT_DATE_FORMAT" }}
-      {% with comment_count=entry.comments.count %}
-      - {{ comment_count }} {% trans "comment" %}{{ comment_count|pluralize }}
-      {% endwith %}
+      - {% blocktrans count comment_count=entry.comments.count %}{{ comment_count }} comment{% plural %}{{ comment_count }} comments{% endblocktrans %}
     </li>
     {% empty %}
     <li>
