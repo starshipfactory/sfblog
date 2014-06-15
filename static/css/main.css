@@ -270,6 +270,11 @@ div.entry-footer p a {
     margin-top: 5px;
 }
 
+#widget-tags ul.tag-cloud li {
+    display: inline;
+    white-space: nowrap;
+}
+
 /* Clearfix */
 .clearfix:before,
 .clearfix:after {
