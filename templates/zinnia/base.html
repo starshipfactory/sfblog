@@ -23,6 +23,10 @@
 {% endblock breadcrumbs %}
 
 {% block sidebar %}
+<div id="infobox" class="widget">
+  <h3>Über uns</h3>
+  {% include "zinnia/tags/infobox.html" %}
+</div>
 <div id="widget-categories" class="widget">
   <h3>{% trans "Categories" %}</h3>
   {% get_categories %}
