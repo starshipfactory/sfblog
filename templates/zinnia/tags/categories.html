@@ -3,8 +3,7 @@
   {% for category in categories %}
   <li{% if category.slug == context_category.slug %} class="current"{% endif %}>
     <a href="{{ category.get_absolute_url }}"
-       title="{% blocktrans %}Show all entries in {{ category }}{% endblocktrans %}">{{ category }}</a>
-    ({{ category.count_entries_published }})
+       title="{% blocktrans %}Show all entries in {{ category }}{% endblocktrans %}">{{ category }} ({{ category.count_entries_published }})</a>
   </li>
   {% empty %}
   <li>
