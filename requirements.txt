@@ -17,7 +17,7 @@ gevent==1.0.1
 greenlet==0.4.2
 gunicorn==18.0
 git+ssh://git@gc-web.de:222/gcweb/imagetools@0d75f39#egg=imagetools
-git+ssh://git@gc-web.de:222/gcweb/simplecms@3fa9bbe#egg=simplecms
+git+ssh://git@gc-web.de:222/gcweb/simplecms@ccfabed#egg=simplecms
 wsgiref==0.1.2
 ipython==1.1.0
 psycopg2==2.5.3
