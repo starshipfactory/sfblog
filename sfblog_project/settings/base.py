@@ -22,6 +22,7 @@ SOUTH_MIGRATION_MODULES = {
     'zinnia': 'customblog.zinnia_migrations',
 }
 ZINNIA_ENTRY_BASE_MODEL = 'customblog.blog_models.BlogEntry'
+ZINNIA_PAGINATION = 5
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
