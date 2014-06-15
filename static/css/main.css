@@ -154,9 +154,10 @@ ul.archive li a {
 	text-decoration: none;
 }
 
-div.entry-footer p {
+div.entry-header p, div.entry-footer p {
 	font-size: 10pt;
 	color: #404040;
+	margin: 0px 0px 0px 0px;
 }
 
 div.entry-footer p a {
