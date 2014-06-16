@@ -1,5 +1,6 @@
 {% extends "zinnia/skeleton.html" %}
 {% load zinnia_tags i18n %}
+{% load core_tags %}
 
 {% block meta-keywords %}{% get_tags as entry_tags %}{{ entry_tags|join:", "}}{% endblock meta-keywords %}
 
@@ -33,7 +34,7 @@
 </div>
 <div id="widget-tags" class="widget">
   <h3>{% trans "Tags" %}</h3>
-  {% get_tag_cloud %}
+  {% core_get_tag_cloud max_num_tags=10 %}
 </div>
 <h3>Besuch' uns auf…</h3>
 <ul>
