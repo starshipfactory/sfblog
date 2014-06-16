@@ -33,7 +33,7 @@ try:
     DEBUG_TOOLBAR_CONFIG = {
         "DISABLE_PANELS": set([
             'debug_toolbar.panels.redirects.RedirectsPanel',
-            'debug_toolbar.panels.sql.SQLPanel',
+            'debug_toolbar.panels.sql.panel.SQLPanel',
         ])
     }
 except ImportError:
