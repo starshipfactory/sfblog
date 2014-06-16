@@ -28,6 +28,7 @@
   <h3>Über uns</h3>
   {% include "zinnia/tags/infobox.html" %}
 </div>
+{% if not simplecms_page.parent.is_nav_root or simplecms_page.parent.slug != "main" %}
 <div id="widget-categories" class="widget">
   <h3>{% trans "Categories" %}</h3>
   {% get_categories %}
@@ -36,6 +37,7 @@
   <h3>{% trans "Tags" %}</h3>
   {% core_get_tag_cloud max_num_tags=10 %}
 </div>
+{% endif %}
 <h3>Besuch' uns auf…</h3>
 <ul>
     <li><a href="https://plus.google.com/+Starship-factoryOrg">Google+</a></li>
@@ -43,10 +45,12 @@
     <li><a href="https://www.facebook.com/starshipfactory">Facebook</a></li>
     <li><a href="https://www.flickr.com/groups/2341518@N21/">Flickr</a></li>
 </ul>
+{% if not simplecms_page.parent.is_nav_root or simplecms_page.parent.slug != "main" %}
 <div id="widget-archives" class="widget">
   <h3>{% trans "Archives" %}</h3>
   {% get_archives_entries_tree %}
 </div>
+{% endif %}
 {% if user.is_authenticated %}
 <div id="widget-tools" class="widget">
   <h3>{% trans "Tools" %}</h3>
