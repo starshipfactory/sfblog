@@ -1,6 +1,7 @@
 Django==1.6.5
 Pillow==2.4.0
 South==0.8.4
+akismet==0.2.0
 argparse==1.2.1
 beautifulsoup4==4.3.2
 django-auth-ldap==1.2.0
