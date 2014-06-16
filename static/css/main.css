@@ -274,6 +274,11 @@ div.entry-footer p a {
     white-space: nowrap;
 }
 
+#widget-archives ul.archives-entries-tree-month li {
+    margin-right: 3px;
+    display: inline;
+}
+
 /* Clearfix */
 .clearfix:before,
 .clearfix:after {

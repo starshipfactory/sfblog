@@ -6,14 +6,13 @@
     <a title="{% trans "Archives" %} {{ year.grouper }}" rel="archives"
        href="{% url 'zinnia_entry_archive_year' year.grouper %}">{{ year.grouper }}</a>
     {% regroup year.list by month as month_list %}
-    <ul>
+    <ul class="{% if not archives %}no-{% endif %}archives-entries-tree-month">
       {% for month in month_list %}
       <li>
         {% with month_date=month.list.0 %}
-        <a title="{% trans "Archives" %} {{ month_date|date:"YEAR_MONTH_FORMAT" }}" rel="archives"
-           href="{% url 'zinnia_entry_archive_month' month_date|date:"Y" month_date|date:"m" %}">
-          {{ month_date|date:"F" }}
-        </a>
+        <a title="{% trans "Archives" %} {{ month_date|date:"YEAR_MONTH_FORMAT" }}"
+           href="{% url 'zinnia_entry_archive_month' month_date|date:"Y" month_date|date:"m" %}"
+	   rel="archive">{{ month_date|date:"M" }}</a>
         {% endwith %}
       </li>
       {% endfor %}
