@@ -1,7 +1,8 @@
 from .base import *  # NOQA
 from os import environ
+import os
 
-environ.setdefault('SFBLOG_CONFIG_PATH', '/etc/sfblog')
+os.environ.setdefault('SFBLOG_CONFIG_PATH', '/etc/sfblog')
 
 ALLOWED_HOSTS = [
 		"blog.starship-factory.ch",
@@ -43,8 +44,8 @@ EMAIL_BACKEND = 'django_sendmail_backend.backends.EmailBackend'
 # Some security related settings.
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
-SECRET_KEY = open(environ.get('SFBLOG_CONFIG_PATH') +
-			      '/secret_key').read().strip()
+SECRET_KEY = open(os.environ.get('SFBLOG_CONFIG_PATH') +
+			         '/secret_key').read().strip()
 
 # Settings for life behind a reverse proxy.
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -55,9 +56,12 @@ DATABASES = {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
                 'NAME': 'sfblog',
                 'USER': 'sfblog',
-                'PASSWORD': open(environ.get('SFBLOG_CONFIG_PATH') + '/pgpassword').read().strip(),
-                'HOST': open(environ.get('SFBLOG_CONFIG_PATH') + '/pgserver').read().strip(),
-                'PORT': open(environ.get('SFBLOG_CONFIG_PATH') + '/pgport').read().strip(),
+                'PASSWORD': open(os.environ.get('SFBLOG_CONFIG_PATH') +
+                                 '/pgpassword').read().strip(),
+                'HOST': open(os.environ.get('SFBLOG_CONFIG_PATH') +
+                             '/pgserver').read().strip(),
+                'PORT': open(os.environ.get('SFBLOG_CONFIG_PATH') +
+                             '/pgport').read().strip(),
                 'CONN_MAX_AGE': None,
         }
 }
@@ -70,3 +74,11 @@ TEMPLATE_LOADERS = (
 )
 
 ZINNIA_PROTOCOL = "https"
+
+ZINNIA_SPAM_CHECKER_BACKENDS = set()
+AKISMET_SECRET_API_KEY = None
+
+if os.path.exists(os.environ.get('SFBLOG_CONFIG_PATH') + '/akismet_secret'):
+    ZINNIA_SPAM_CHECKER_BACKENDS = ('zinnia.spam_checker.backends.automattic',)
+    AKISMET_SECRET_API_KEY = open(os.environ.get('SFBLOG_CONFIG_PATH') +
+                                  '/akismet_secret').read().strip()
