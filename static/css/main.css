@@ -189,6 +189,7 @@ div.entry-footer p a {
 }
 
 .nav-main {
+    background-color: #3E5F81;
     background-image: linear-gradient(#3E5F81, #294564);
     color: #fff;
     padding-left: 0;
@@ -381,6 +382,7 @@ div.entry-footer p a {
 }
 
 #footer {
+    background-color: #3E5F81;
     background-image: linear-gradient(#3E5F81, #294564);
     color: #fff;
     padding: 0;
