@@ -398,6 +398,11 @@ div.entry-footer p a {
 #comment-form {
     margin: 25px 0;
 }
+#id_comment {
+    width: 100%;
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
 #footer {
     overflow: hidden;
