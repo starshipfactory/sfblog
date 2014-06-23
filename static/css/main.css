@@ -491,6 +491,9 @@ div.entry-footer p a {
     .nav-main li a {
         display: inline-block;
     }
+    .nav-main {
+        max-height: 300px;
+    }
     .nav-footer {
         margin-left: 3px;
         float: left;
