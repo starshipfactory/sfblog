@@ -19,17 +19,17 @@ strong {
 }
 
 h1 {
-    font-size: 32px;
-    font-weight: bold;
-}
-
-h2 {
     font-size: 24px;
     font-weight: bold;
 }
 
-h3 {
+h2 {
     font-size: 19px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 16px;
     font-weight: bold;
     color: #666;
 }
@@ -73,13 +73,34 @@ h1 a, h2 a, h3 a, h4 a {
 }
 .titlecontainer h1 + p {
     margin: 0;
-    margin-bottom: 10px;
 }
 .titlecontainer h1 a:link {
     font-weight: bold;
     text-decoration: none;
 }
-
+.icon-w-label {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+.icon-w-label .icon {
+    width: 35px;
+    height: 35px;
+}
+.menu-btn .icon {
+    background: url(../images/menu-btn.png) no-repeat center;
+}
+.menu-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+}
+.icon-w-label .label {
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+}
 
 #footer {
     overflow: hidden;
@@ -95,6 +116,7 @@ form.search {
 	box-sizing: border-box;
     padding: 0;
     overflow: hidden;
+    margin: 0 0 25px 0;
 }
 
 form.search input[type=text] { 
@@ -197,6 +219,14 @@ div.entry-footer p a {
     padding-left: 0;
     margin: 0;
     text-align: center;
+    max-height: 0;
+    transition: ease-in-out max-height 400ms,
+                ease-in-out margin 400ms;
+    overflow: hidden;
+}
+.nav-main.expanded {
+    max-height: 300px;
+    margin: 10px 0 0 0;
 }
 .nav-main li {
     list-style-type: none;
@@ -415,8 +445,27 @@ div.entry-footer p a {
         margin: 0;
         margin-top: 40px;
     }
+    .titlecontainer h1 + p {
+        margin-bottom: 10px;
+    }
 }
 @media only screen and (min-width: 600px) {
+    h1 {
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-size: 19px;
+        font-weight: bold;
+        color: #666;
+    }
+
     #content {
         float: left;
         width: 70%;
@@ -429,6 +478,9 @@ div.entry-footer p a {
     }
 }
 @media only screen and (min-width: 700px) {
+    .menu-btn {
+        display: none;
+    }
     .nav-main {
         text-align: left;
     }

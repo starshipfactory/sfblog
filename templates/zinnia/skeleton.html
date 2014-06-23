@@ -25,6 +25,12 @@
 <body class="zinnia {% block theme-class %}default{% endblock theme-class %} {% block color-class %}blue{% endblock color-class %} {% block sidebar-class %}right-sidebar{% endblock sidebar-class %} {% block body-class %}{% endblock body-class %}">
     <div class="container clearfix">
         <div id="header" class="clearfix">
+            <div class="icon-w-label menu-btn">
+                <div class="icon"></div>
+                <a class="label" href="#">
+                    Menu
+                </a>
+            </div>
             <a href="/">
                 <img class="titlelogo" src="{% static "images/logo.png" %}" alt="Starship Factory Logo" width="150" height="87" />
             </a>
@@ -42,7 +48,6 @@
             <li><a href="https://wiki.starship-factory.ch/">Wiki</a></li>
         </ul>
         {% block slider %}{% endblock slider %}
-        <br clear="all" />
         <div id="content" class="hfeed">
             {% block breadcrumbs %}{% endblock breadcrumbs %}
             {% block content %}
@@ -97,6 +102,11 @@
             </ul>
         </div>
     </div>
+    {% block javascript %}
+    <script src="{% static "js/vendor/ready.min.js" %}"></script>
+    <script src="{% static "js/vendor/classList.js" %}"></script>
+    <script src="{% static "js/menu.js" %}"></script>
+    {% endblock %}
 </body>
 </html>
 {% comment %} vim:ts=4:sw=4:et:ft=htmldjango
