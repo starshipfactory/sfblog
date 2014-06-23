@@ -19,17 +19,17 @@ strong {
 }
 
 h1 {
-    font-size: 32px;
-    font-weight: bold;
-}
-
-h2 {
     font-size: 24px;
     font-weight: bold;
 }
 
-h3 {
+h2 {
     font-size: 19px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 16px;
     font-weight: bold;
     color: #666;
 }
@@ -39,13 +39,14 @@ h1 a, h2 a, h3 a, h4 a {
 }
 
 .container {
-    margin: 25px auto 25px auto;
+    margin: 0;
 	max-width: 960px;
 	box-shadow: 0 0 10px #999;
     background-color: #fff;
 }
 
-.image-snippet img {
+.image-snippet img,
+.main-image {
 	max-width: 630px;
 	width: 100%;
 	height: auto;
@@ -55,13 +56,51 @@ h1 a, h2 a, h3 a, h4 a {
     overflow: hidden;
     position: relative;
 }
-
-#footer {
-    overflow: hidden;
-    padding-left: 25px;
-    width: 100%;
+.titlelogo {
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+}
+.titlecontainer {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+.titlecontainer h1 {
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+	box-sizing: border-box;
+    line-height: 38px;
+    margin: 0;
+}
+.titlecontainer h1 + p {
+    margin: 0;
+}
+.titlecontainer h1 a:link {
+    font-weight: bold;
+    text-decoration: none;
+}
+.icon-w-label {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+.icon-w-label .icon {
+    width: 35px;
+    height: 35px;
+}
+.menu-btn .icon {
+    background: url(../images/menu-btn.png) no-repeat center;
+}
+.menu-btn {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    padding: 10px;
+}
+.icon-w-label .label {
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
 }
 
 form.search {
@@ -70,6 +109,7 @@ form.search {
 	box-sizing: border-box;
     padding: 0;
     overflow: hidden;
+    margin: 0 0 25px 0;
 }
 
 form.search input[type=text] { 
@@ -95,33 +135,10 @@ form.search input[type=submit] {
     margin-top: 10px;
 }
 
-.titlelogo {
-	float: left;
-	padding: 25px;
-}
-.titlecontainer {
-	float: left;
-}
-#header h1 {
-    -moz-box-sizing: border-box;
-	box-sizing: border-box;
-    margin: 0;
-    margin-top: 40px;
-}
-#header h1 + p {
-    margin: 0;
-}
-#header h1 a:link {
-    font-weight: bold;
-    text-decoration: none;
-}
-
 #content {
-	float: left;
-	width: 70%;
     -moz-box-sizing: border-box;
 	box-sizing: border-box;
-	padding-left: 25px;
+    padding: 0 10px;
 }
 
 ul.paginator {
@@ -189,15 +206,24 @@ div.entry-footer p a {
 }
 
 .nav-main {
+    transform: translateZ(0);
     background-color: #3E5F81;
     background-image: linear-gradient(#3E5F81, #294564);
     color: #fff;
     padding-left: 0;
     margin: 0;
+    text-align: center;
+    max-height: 0;
+    transition: ease-in-out max-height 400ms,
+                ease-in-out margin 400ms;
+    overflow: hidden;
+}
+.nav-main.expanded {
+    max-height: 300px;
+    margin: 10px 0 0 0;
 }
 .nav-main li {
     list-style-type: none;
-    float: left;
     border-left: 1px solid #294564;
     margin: 0;
 }
@@ -213,6 +239,9 @@ div.entry-footer p a {
     color: #fff;
     text-decoration: none;
     padding: 10px 25px;
+    display: block;
+}
+.active-item {
     display: inline-block;
 }
 .nav-main a:hover {
@@ -222,33 +251,22 @@ div.entry-footer p a {
 }
 
 .nav-footer {
-    float: left;
     list-style-type: none;
-    display: inline;
     padding: 0;
     line-height: 26px;
-    margin-left: 3px;
 }
-
 .nav-footer li {
-    margin-left: 5px;
-    display: inline;
-}
-
-.nav-footer li:before {
-    content: "|";
-    display: inline-block;
+    margin: 16px 0;
 }
 
 #sidebar {
-	float: left;
-	width: 30%;
     -moz-box-sizing: border-box;
 	box-sizing: border-box;
-	padding: 0 25px 25px 25px;
+	padding: 0 10px 10px 10px;
+    max-width: 300px;
 }
 #sidebar h3:first-child {
-	/*margin-top: 0;*/
+	margin-top: 10px;
 }
 #sidebar ul {
     padding-left: 0;
@@ -380,21 +398,118 @@ div.entry-footer p a {
 #comment-form {
     margin: 25px 0;
 }
+#id_comment {
+    width: 100%;
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
 #footer {
+    overflow: hidden;
+    width: 100%;
     background-color: #3E5F81;
     background-image: linear-gradient(#3E5F81, #294564);
     color: #fff;
-    padding: 0;
-    padding-left: 25px;
-    margin: 0;
-    margin-top: 25px;
+    padding: 0 10px;
+    margin: 25px 0 0 0;
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 #footer a:link { color: #FFF; }
 #footer a:visited { color: #FFF; }
 #footer a:hover { color: #FFF; }
 #footer a:focus { color: #FFF; }
 #footer a:active { color: #FFF; }
-#footer p {
-   float: left;
+
+@media only screen and (min-width: 500px) {
+    .titlelogo {
+        float: left;
+        padding: 25px;
+    }
+    .titlecontainer {
+        float: left;
+    }
+    .titlecontainer h1 {
+        margin: 0;
+        margin-top: 40px;
+    }
+    .titlecontainer h1 + p {
+        margin-bottom: 10px;
+    }
+    #content {
+        padding: 0 25px;
+    }
+    #sidebar {
+        padding: 0 25px 25px 25px;
+    }
+    #footer {
+        padding: 0 25px;
+    }
+    .menu-btn {
+        right: 12px;
+        top: 37px;
+    }
+}
+@media only screen and (min-width: 600px) {
+    h1 {
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-size: 19px;
+        font-weight: bold;
+        color: #666;
+    }
+
+    #content {
+        float: left;
+        width: 70%;
+        padding-right: 0;
+    }
+    #sidebar {
+        float: left;
+        width: 30%;
+        max-width: none;
+    }
+}
+@media only screen and (min-width: 700px) {
+    .menu-btn {
+        display: none;
+    }
+    .nav-main {
+        text-align: left;
+    }
+    .nav-main li {
+        float: left;
+    }
+    .nav-main li a {
+        display: inline-block;
+    }
+    .nav-footer {
+        margin-left: 3px;
+        float: left;
+        display: inline;
+    }
+    .nav-footer li {
+        display: inline;
+        margin-left: 5px;
+    }
+    .nav-footer li:before {
+        content: " |";
+        display: inline-block;
+    }
+    #footer p {
+       float: left;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .container {
+        margin: 25px auto 25px auto;
+    }
 }

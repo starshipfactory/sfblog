@@ -59,8 +59,9 @@
         <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
           {% endif %}
           {% with object.resized_image.sizes.blogtitle as image %}
-          <img src="{{ image.url }}" alt="{{ object.title }}" class="left" 
-              width="{{ image.width }}" height="{{ image.height }}"/>
+          <img src="{{ image.url }}" alt="{{ object.title }}" class="main-image" 
+              width="{{ image.width }}" height="{{ image.height }}" 
+              style="max-width: {{ image.width }}px" />
           {% endwith %}
           {% if continue_reading %}
         </a>
