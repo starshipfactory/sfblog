@@ -69,6 +69,7 @@ h1 a, h2 a, h3 a, h4 a {
 .titlecontainer h1 {
     -moz-box-sizing: border-box;
 	box-sizing: border-box;
+    line-height: 38px;
     margin: 0;
 }
 .titlecontainer h1 + p {
@@ -93,7 +94,7 @@ h1 a, h2 a, h3 a, h4 a {
 .menu-btn {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 15px;
     padding: 10px;
 }
 .icon-w-label .label {
@@ -441,6 +442,7 @@ div.entry-footer p a {
     }
     .menu-btn {
         right: 12px;
+        top: 37px;
     }
 }
 @media only screen and (min-width: 600px) {
