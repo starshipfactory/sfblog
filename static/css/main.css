@@ -484,15 +484,16 @@ div.entry-footer p a {
     }
     .nav-main {
         text-align: left;
+        max-height: 300px;
+    }
+    .nav-main.expanded {
+        margin: 0;
     }
     .nav-main li {
         float: left;
     }
     .nav-main li a {
         display: inline-block;
-    }
-    .nav-main {
-        max-height: 300px;
     }
     .nav-footer {
         margin-left: 3px;
