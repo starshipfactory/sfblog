@@ -485,22 +485,6 @@ div.entry-footer p a {
     }
 }
 @media only screen and (min-width: 700px) {
-    .menu-btn {
-        display: none;
-    }
-    .nav-main {
-        text-align: left;
-        max-height: 300px;
-    }
-    .nav-main.expanded {
-        margin: 0;
-    }
-    .nav-main li {
-        float: left;
-    }
-    .nav-main li a {
-        display: inline-block;
-    }
     .nav-footer {
         margin-left: 3px;
         float: left;
@@ -516,6 +500,24 @@ div.entry-footer p a {
     }
     #footer p {
        float: left;
+    }
+}
+@media only screen and (min-width: 800px) {
+    .menu-btn {
+        display: none;
+    }
+    .nav-main {
+        text-align: left;
+        max-height: 300px;
+    }
+    .nav-main.expanded {
+        margin: 0;
+    }
+    .nav-main li {
+        float: left;
+    }
+    .nav-main li a {
+        display: inline-block;
     }
 }
 @media only screen and (min-width: 900px) {
