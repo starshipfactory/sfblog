@@ -39,7 +39,7 @@ h1 a, h2 a, h3 a, h4 a {
 }
 
 .container {
-    margin: 25px auto 25px auto;
+    margin: 0;
 	max-width: 960px;
 	box-shadow: 0 0 10px #999;
     background-color: #fff;
@@ -56,6 +56,30 @@ h1 a, h2 a, h3 a, h4 a {
     overflow: hidden;
     position: relative;
 }
+.titlelogo {
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+}
+.titlecontainer {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+.titlecontainer h1 {
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+    margin: 0;
+}
+.titlecontainer h1 + p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+.titlecontainer h1 a:link {
+    font-weight: bold;
+    text-decoration: none;
+}
+
 
 #footer {
     overflow: hidden;
@@ -94,27 +118,6 @@ form.search input[type=submit] {
 }
 #comment-form div:first-of-type label {
     margin-top: 10px;
-}
-
-.titlelogo {
-	float: left;
-	padding: 25px;
-}
-.titlecontainer {
-	float: left;
-}
-#header h1 {
-    -moz-box-sizing: border-box;
-	box-sizing: border-box;
-    margin: 0;
-    margin-top: 40px;
-}
-#header h1 + p {
-    margin: 0;
-}
-#header h1 a:link {
-    font-weight: bold;
-    text-decoration: none;
 }
 
 #content {
@@ -195,7 +198,6 @@ div.entry-footer p a {
 }
 .nav-main li {
     list-style-type: none;
-    float: left;
     border-left: 1px solid #294564;
     margin: 0;
 }
@@ -211,6 +213,9 @@ div.entry-footer p a {
     color: #fff;
     text-decoration: none;
     padding: 10px 25px;
+    display: block;
+}
+.active-item {
     display: inline-block;
 }
 .nav-main a:hover {
@@ -395,6 +400,19 @@ div.entry-footer p a {
    float: left;
 }
 
+@media only screen and (min-width: 500px) {
+    .titlelogo {
+        float: left;
+        padding: 25px;
+    }
+    .titlecontainer {
+        float: left;
+    }
+    .titlecontainer h1 {
+        margin: 0;
+        margin-top: 40px;
+    }
+}
 @media only screen and (min-width: 600px) {
     #content {
         float: left;
@@ -407,4 +425,16 @@ div.entry-footer p a {
         max-width: none;
     }
 }
-
+@media only screen and (min-width: 700px) {
+    .nav-main li {
+        float: left;
+    }
+    .nav-main li a {
+        display: inline-block;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .container {
+        margin: 25px auto 25px auto;
+    }
+}
