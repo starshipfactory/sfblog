@@ -102,14 +102,6 @@ h1 a, h2 a, h3 a, h4 a {
     text-decoration: none;
 }
 
-#footer {
-    overflow: hidden;
-    padding-left: 25px;
-    width: 100%;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
 form.search {
 	width: 100%;
     -moz-box-sizing: border-box;
@@ -145,7 +137,7 @@ form.search input[type=submit] {
 #content {
     -moz-box-sizing: border-box;
 	box-sizing: border-box;
-    padding: 0 25px;
+    padding: 0 10px;
 }
 
 ul.paginator {
@@ -258,28 +250,18 @@ div.entry-footer p a {
 }
 
 .nav-footer {
-    float: left;
     list-style-type: none;
-    display: inline;
     padding: 0;
     line-height: 26px;
-    margin-left: 3px;
 }
-
 .nav-footer li {
-    margin-left: 5px;
-    display: inline;
-}
-
-.nav-footer li:before {
-    content: "|";
-    display: inline-block;
+    margin: 16px 0;
 }
 
 #sidebar {
     -moz-box-sizing: border-box;
 	box-sizing: border-box;
-	padding: 0 25px 25px 25px;
+	padding: 0 10px 10px 10px;
     max-width: 300px;
 }
 #sidebar h3:first-child {
@@ -417,22 +399,21 @@ div.entry-footer p a {
 }
 
 #footer {
+    overflow: hidden;
+    width: 100%;
     background-color: #3E5F81;
     background-image: linear-gradient(#3E5F81, #294564);
     color: #fff;
-    padding: 0;
-    padding-left: 25px;
-    margin: 0;
-    margin-top: 25px;
+    padding: 0 10px;
+    margin: 25px 0 0 0;
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 #footer a:link { color: #FFF; }
 #footer a:visited { color: #FFF; }
 #footer a:hover { color: #FFF; }
 #footer a:focus { color: #FFF; }
 #footer a:active { color: #FFF; }
-#footer p {
-   float: left;
-}
 
 @media only screen and (min-width: 500px) {
     .titlelogo {
@@ -448,6 +429,18 @@ div.entry-footer p a {
     }
     .titlecontainer h1 + p {
         margin-bottom: 10px;
+    }
+    #content {
+        padding: 0 25px;
+    }
+    #sidebar {
+        padding: 0 25px 25px 25px;
+    }
+    #footer {
+        padding: 0 25px;
+    }
+    .menu-btn {
+        right: 12px;
     }
 }
 @media only screen and (min-width: 600px) {
@@ -490,6 +483,22 @@ div.entry-footer p a {
     }
     .nav-main li a {
         display: inline-block;
+    }
+    .nav-footer {
+        margin-left: 3px;
+        float: left;
+        display: inline;
+    }
+    .nav-footer li {
+        display: inline;
+        margin-left: 5px;
+    }
+    .nav-footer li:before {
+        content: " |";
+        display: inline-block;
+    }
+    #footer p {
+       float: left;
     }
 }
 @media only screen and (min-width: 900px) {
