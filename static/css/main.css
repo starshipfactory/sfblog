@@ -103,6 +103,18 @@ h1 a, h2 a, h3 a, h4 a {
     font-size: 14px;
     text-decoration: none;
 }
+.langswitch {
+    text-align: center;
+}
+.langswitch ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.langswitch .item {
+    list-style-type: none;
+    display: inline;
+    margin: 10px;
+}
 
 form.search {
 	width: 100%;

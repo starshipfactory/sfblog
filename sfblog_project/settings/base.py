@@ -68,6 +68,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'core',
     'simplecms',
+    'localeurl',
     'zinnia',
     'south',
     'imagetools',
@@ -77,6 +78,7 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'localeurl.middleware.LocaleURLMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -108,7 +110,10 @@ LANGUAGE_CODE = 'de'
 
 LANGUAGES = (
     ('de', 'Deutsch'),
+    ('en', 'English'),
 )
+
+PREFIX_DEFAULT_LOCALE = False
 
 TIME_ZONE = 'UTC'
 
