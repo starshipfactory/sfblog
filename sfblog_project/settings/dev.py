@@ -55,3 +55,5 @@ except ImportError:
     pass
 
 INTERNAL_IPS = ('127.0.0.1', '::1')
+ZINNIA_PING_DIRECTORIES = ()
+ZINNIA_PING_EXTERNAL_URLS = False
