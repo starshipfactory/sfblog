@@ -51,7 +51,13 @@
                         {% if LANGUAGE_CODE == language.code %}
                             {{ language.code|upper }}
                         {% else %}
-                            <a title="{{ language.name_local }}" href="{{ request.path|chlocale:language.code }}">{{ language.code|upper }}</a>
+                            {% with request.path|simplecms_chlocale:language.code as translation %}
+                                {% if translation == "" %}
+                                {{ language.code|upper }}
+                                {% else %}
+                                <a title="{{ language.name_local }}" href="{{ translation }}">{{ language.code|upper }}</a>
+                                {% endif %}
+                            {% endwith %}
                         {% endif %}
                         </li>
                     {% endfor %}
