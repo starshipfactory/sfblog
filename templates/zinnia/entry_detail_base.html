@@ -11,10 +11,11 @@
 {% block meta %}
     <meta property="og:title" content="{{ object.title }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://{{ site.domain }}{{ object.get_absolute_url }}" />
+    <meta property="og:url" content="http{% if request.is_secure %}s{% endif %}://{{ site.domain }}{{ object.get_absolute_url }}" />
     {% if object.resized_image %}
         {% with object.resized_image.sizes.blogtitle as image %}
-        <meta property="og:image" content="{{ image.url }}" />
+        <meta property="og:image" content="http{% if request.is_secure %}s{% endif %}://{{ site.domain }}{{ image.url }}" />
+        {# FIXME: this will break if MEDIA_URL is set to a full URL instead of just a path #}
         {% endwith %}
     {% endif %}
     {{ block.super }}
