@@ -8,6 +8,18 @@
 
 {% block meta-keywords %}{% if object.tags %}{{ object.tags }}{% else %}{{ block.super }}{% endif %}{% endblock meta-keywords %}
 
+{% block meta %}
+    <meta property="og:title" content="{{ object.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ object.get_absolute_url }}" />
+    {% if object.resized_image %}
+        {% with object.resized_image.sizes.blogtitle as image %}
+        <meta property="og:image" content="{{ image.url }}" />
+        {% endwith %}
+    {% endif %}
+    {{ block.super }}
+{% endblock %}
+
 {% block link %}
   {{ block.super }}
   {% with previous_entry=object.previous_entry %}{% if previous_entry %}
