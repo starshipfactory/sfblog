@@ -16,6 +16,12 @@
         {% with object.resized_image.sizes.blogtitle as image %}
         <meta property="og:image" content="http{% if request.is_secure %}s{% endif %}://{{ site.domain }}{{ image.url }}" />
         {# FIXME: this will break if MEDIA_URL is set to a full URL instead of just a path #}
+        <meta property="twitter:card" content="photo" />
+        <meta property="twitter:site" content="@starshipfactory" />
+        <meta property="twitter:title" content="" /> {# left blank intentionally #}
+        <meta property="twitter:description" content="Read the full blog post on {{ site.domain }}" />
+        <meta property="twitter:image" content="http{% if request.is_secure %}s{% endif %}://{{ site.domain }}{{ image.url }}" />
+        <meta property="twitter:url" content="http{% if request.is_secure %}s{% endif %}://{{ site.domain }}{{ object.get_absolute_url }}" /> 
         {% endwith %}
     {% endif %}
     {{ block.super }}
