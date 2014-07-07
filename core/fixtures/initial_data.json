@@ -18,5 +18,15 @@
             "name": "YouTu.be",
             "format": 1
         }
+    },
+    {
+        "pk": 11,
+        "model": "oembed.providerrule",
+        "fields": {
+            "regex": "https?://twitter.com/\\S*/status/\\S*",
+            "endpoint": "https://api.twitter.com/1/statuses/oembed.json?align=center",
+            "name": "Twitter Status",
+            "format": 1
+        }
     }
 ]
