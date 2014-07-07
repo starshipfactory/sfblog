@@ -1,9 +1,9 @@
 {% load comments i18n zinnia_tags %}
-<div id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}">
+<div id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}" itemscope itemtype="http://schema.org/BlogPosting">
   {% block entry-header %}
   <div class="entry-header">
     {% block entry-title %}
-    <h2 class="entry-title">
+    <h2 class="entry-title" itemprop="name">
       <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
         {{ object.title|widont }}
       </a>
@@ -50,7 +50,7 @@
   {% endblock entry-header %}
 
   {% block entry-body %}
-  <div class="entry-body">
+  <div class="entry-body" itemprop="articleBody">
     {% block entry-image %}
     {% if object.resized_image %}
     <div class="entry-image">
@@ -61,7 +61,7 @@
           {% with object.resized_image.sizes.blogtitle as image %}
           <img src="{{ image.url }}" alt="{{ object.title }}" class="main-image" 
               width="{{ image.width }}" height="{{ image.height }}" 
-              style="max-width: {{ image.width }}px" />
+              style="max-width: {{ image.width }}px" itemprop="image" />
           {% endwith %}
           {% if continue_reading %}
         </a>
