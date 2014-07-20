@@ -6,17 +6,21 @@
 
   {% if page.has_previous %}
   <li class="page previous">
-    <a href="?page={{ page.previous_page_number }}{{ GET_string }}"
+    <a href="?page={{ page.previous_page_number }}{{ GET_string }}" class="button"
        title="{% trans "More recent entries" %}">&laquo;</a>
+  </li>
+  {% else %}
+  <li class="page previous">
+    <strong class="button button-inactive">&laquo;</strong>
   </li>
   {% endif %}
 
   {% for page_number in begin %}
   <li class="page {% ifequal page.number page_number %}current{% endifequal %}">
     {% ifequal page.number page_number %}
-    <strong>{{ page_number }}</strong>
+    <strong class="button button-inactive">{{ page_number }}</strong>
     {% else %}
-    <a href="?page={{ page_number }}{{ GET_string }}"
+    <a href="?page={{ page_number }}{{ GET_string }}" class="button"
        title="{% trans "Entries page" %} {{ page_number }}">{{ page_number }}</a>
     {% endifequal%}
   </li>
@@ -27,9 +31,9 @@
   {% for page_number in middle %}
   <li class="page {% ifequal page.number page_number %}current{% endifequal %}">
     {% ifequal page.number page_number %}
-    <strong>{{ page_number }}</strong>
+    <strong class="button button-inactive">{{ page_number }}</strong>
     {% else %}
-    <a href="?page={{ page_number }}{{ GET_string }}"
+    <a href="?page={{ page_number }}{{ GET_string }}" class="button"
        title="{% trans "Entries page" %} {{ page_number }}">{{ page_number }}</a>
     {% endifequal%}
   </li>
@@ -41,9 +45,9 @@
   {% for page_number in end %}
   <li class="page {% ifequal page.number page_number %}current{% endifequal %}">
     {% ifequal page.number page_number %}
-    <strong>{{ page_number }}</strong>
+    <strong class="button button-inactive">{{ page_number }}</strong>
     {% else %}
-    <a href="?page={{ page_number }}{{ GET_string }}"
+    <a href="?page={{ page_number }}{{ GET_string }}" class="button"
        title="{% trans "Entries page" %} {{ page_number }}">{{ page_number }}</a>
     {% endifequal%}
   </li>
@@ -52,8 +56,12 @@
 
   {% if page.has_next %}
   <li class="page next">
-    <a href="?page={{ page.next_page_number }}{{ GET_string }}"
+    <a href="?page={{ page.next_page_number }}{{ GET_string }}" class="button"
        title="{% trans "More old entries" %}">&raquo;</a>
+  </li>
+  {% else %}
+  <li class="page next">
+    <strong class="button button-inactive">&raquo;</strong>
   </li>
   {% endif %}
 </ul>
