@@ -495,7 +495,7 @@ div.entry-footer p a {
 #footer a:focus { color: #FFF; }
 #footer a:active { color: #FFF; }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 400px) {
     .paginator {
         text-align: left;
     }
@@ -503,6 +503,9 @@ div.entry-footer p a {
         display: inline-block;
         margin: 0;
     }
+}
+
+@media only screen and (min-width: 500px) {
     .titlelogo {
         float: left;
         padding: 25px;
