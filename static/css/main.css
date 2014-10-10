@@ -506,10 +506,16 @@ div.entry-footer p a {
 
     div.image-snippet.image_style_float_right {
 	float: right;
+	padding-left: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
     }
 
     div.image-snippet.image_style_float_left {
 	float: left;
+	padding-right: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
     }
 }
 
