@@ -503,6 +503,14 @@ div.entry-footer p a {
         display: inline-block;
         margin: 0;
     }
+
+    div.image-snippet.image_style_float_right {
+	float: right;
+    }
+
+    div.image-snippet.image_style_float_left {
+	float: left;
+    }
 }
 
 @media only screen and (min-width: 500px) {
