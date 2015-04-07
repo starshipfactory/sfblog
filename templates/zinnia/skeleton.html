@@ -1,4 +1,5 @@
 {% load i18n staticfiles %}
+{% load event_tags %}
 {% load simplecms_tags %}{% load localeurl_tags %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
@@ -102,8 +103,27 @@
                 <input type="submit" class="submitbutton" value="OK" />
                 </p>
             </form>
+
+            {% get_recent_events as events %}
+            {% if events %}
+            <h3>Termine</h3>
+            <ul>
+            {% for occurrence in events %}
+                {% with occurrence.event.eventdescription as ed %}
+                <li>
+                    {{ occurrence.start|date:"d.m." }}
+                    <a href="{{ ed.get_absolute_url }}">
+                        {{ occurrence.title }}
+                    </a>
+                </li>
+                {% endwith %}
+            {% endfor %}
+            </ul>
+            {% endif %}
+
             {% block sidebar %}
             {% endblock sidebar %}
+
             <ul class="bottom-navigation">
                 <li>
                 <a href="{% url 'zinnia_sitemap' %}" title="{% trans "Sitemap" %}" class="sitemap">

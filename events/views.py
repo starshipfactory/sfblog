@@ -9,6 +9,6 @@ class EventList(ListView):
     context_object_name = "events"
 
     def get_queryset(self):
-        cal = Calendar.objects.get(slug="testkalender")
+        cal = Calendar.objects.get(slug="default")
         occurrences = cal.occurrences_after(now())
-        return islice(occurrences, 10)
+        return islice(occurrences, 25)
