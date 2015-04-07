@@ -104,6 +104,7 @@
                 </p>
             </form>
 
+            {% block sidebar %}
             {% get_recent_events as events %}
             {% if events %}
             <h3>Termine</h3>
@@ -119,9 +120,9 @@
                 {% endwith %}
             {% endfor %}
             </ul>
+            <p><a href="{% url 'events-list' %}">Mehr Termine...</a></p>
             {% endif %}
 
-            {% block sidebar %}
             {% endblock sidebar %}
 
             <ul class="bottom-navigation">

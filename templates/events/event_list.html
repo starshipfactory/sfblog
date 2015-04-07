@@ -9,7 +9,7 @@
 
 <ul class='event-list'>
     {% for occurrence in events %}
-    <li>
+    <li class="event-item">
         {% with occurrence.event.eventdescription as ed %}
         <h3><a href="{{ occurrence.event.eventdescription.get_absolute_url }}">{{ occurrence.title }}</a></h3>
 

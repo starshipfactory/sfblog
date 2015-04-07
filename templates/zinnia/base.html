@@ -34,6 +34,9 @@
   <h3>{% trans "Categories" %}</h3>
   {% get_categories %}
 </div>
+
+{{ block.super }}
+
 <div id="widget-tags" class="widget">
   <h3>{% trans "Tags" %}</h3>
   {% core_get_tag_cloud max_num_tags=10 %}
