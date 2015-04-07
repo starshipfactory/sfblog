@@ -15,37 +15,25 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal(u'events', ['Location'])
 
-        # Adding model 'EventDesc'
-        db.create_table(u'events_eventdesc', (
+        # Adding model 'EventDescription'
+        db.create_table(u'events_eventdescription', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('title', self.gf('django.db.models.fields.CharField')(max_length=128)),
             ('cost', self.gf('django.db.models.fields.TextField')(default='', blank=True)),
             ('page', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['simplecms.Page'], null=True, blank=True)),
             ('post', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['zinnia.Entry'], null=True, blank=True)),
-        ))
-        db.send_create_signal(u'events', ['EventDesc'])
-
-        # Adding model 'EventDate'
-        db.create_table(u'events_eventdate', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('begin', self.gf('django.db.models.fields.DateTimeField')()),
-            ('end', self.gf('django.db.models.fields.DateTimeField')()),
             ('location', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['events.Location'])),
-            ('event', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['events.EventDesc'])),
             ('instructor', self.gf('django.db.models.fields.CharField')(max_length=128)),
+            ('event', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['schedule.Event'], unique=True)),
         ))
-        db.send_create_signal(u'events', ['EventDate'])
+        db.send_create_signal(u'events', ['EventDescription'])
 
 
     def backwards(self, orm):
         # Deleting model 'Location'
         db.delete_table(u'events_location')
 
-        # Deleting model 'EventDesc'
-        db.delete_table(u'events_eventdesc')
-
-        # Deleting model 'EventDate'
-        db.delete_table(u'events_eventdate')
+        # Deleting model 'EventDescription'
+        db.delete_table(u'events_eventdescription')
 
 
     models = {
@@ -85,27 +73,48 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        u'events.eventdate': {
-            'Meta': {'object_name': 'EventDate'},
-            'begin': ('django.db.models.fields.DateTimeField', [], {}),
-            'end': ('django.db.models.fields.DateTimeField', [], {}),
-            'event': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['events.EventDesc']"}),
+        u'events.eventdescription': {
+            'Meta': {'object_name': 'EventDescription'},
+            'cost': ('django.db.models.fields.TextField', [], {'default': "''", 'blank': 'True'}),
+            'event': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['schedule.Event']", 'unique': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'instructor': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
-            'location': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['events.Location']"})
-        },
-        u'events.eventdesc': {
-            'Meta': {'object_name': 'EventDesc'},
-            'cost': ('django.db.models.fields.TextField', [], {'default': "''", 'blank': 'True'}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'location': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['events.Location']"}),
             'page': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['simplecms.Page']", 'null': 'True', 'blank': 'True'}),
-            'post': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['zinnia.Entry']", 'null': 'True', 'blank': 'True'}),
-            'title': ('django.db.models.fields.CharField', [], {'max_length': '128'})
+            'post': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['zinnia.Entry']", 'null': 'True', 'blank': 'True'})
         },
         u'events.location': {
             'Meta': {'object_name': 'Location'},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '128'})
+        },
+        'schedule.calendar': {
+            'Meta': {'object_name': 'Calendar'},
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
+            'slug': ('django.db.models.fields.SlugField', [], {'max_length': '200'})
+        },
+        'schedule.event': {
+            'Meta': {'object_name': 'Event'},
+            'calendar': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['schedule.Calendar']", 'null': 'True', 'blank': 'True'}),
+            'created_on': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
+            'creator': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'creator'", 'null': 'True', 'to': u"orm['auth.User']"}),
+            'description': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
+            'end': ('django.db.models.fields.DateTimeField', [], {}),
+            'end_recurring_period': ('django.db.models.fields.DateTimeField', [], {'null': 'True', 'blank': 'True'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'rule': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['schedule.Rule']", 'null': 'True', 'blank': 'True'}),
+            'start': ('django.db.models.fields.DateTimeField', [], {}),
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'updated_on': ('django.db.models.fields.DateTimeField', [], {'auto_now': 'True', 'blank': 'True'})
+        },
+        'schedule.rule': {
+            'Meta': {'object_name': 'Rule'},
+            'description': ('django.db.models.fields.TextField', [], {}),
+            'frequency': ('django.db.models.fields.CharField', [], {'max_length': '10'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '32'}),
+            'params': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'})
         },
         u'simplecms.content': {
             'Meta': {'object_name': 'Content'},
