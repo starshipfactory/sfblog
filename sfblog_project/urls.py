@@ -46,5 +46,6 @@ if settings.DEBUG and 'debug_toolbar' in settings.INSTALLED_APPS:
 
 urlpatterns += patterns(
     '',
+    url(r'events/', include('events.urls')),
     url(r'', include("simplecms.urls")),
 )

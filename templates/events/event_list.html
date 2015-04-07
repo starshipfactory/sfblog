@@ -1,0 +1,27 @@
+{% extends "zinnia/skeleton.html" %}
+
+{% block content %}
+<h2>Termine</h2>
+
+<ul>
+    {% for occurrence in events %}
+    <li>
+        {% with occurrence.event.eventdescription as ed %}
+        <a href="{{ occurrence.event.eventdescription.get_absolute_url }}">
+        {{ occurrence.title }}
+        {{ occurrence }}
+        {{ eventdescription }}</a>
+        @
+        {% if ed.location.page %}
+        <a href="{{ ed.location.page.get_absolute_url }}">
+        {% endif %}
+        {{ ed.location }}
+        {% if ed.page %}
+        </a>
+        {% endif %}
+        {% endwith %}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

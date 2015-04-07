@@ -20,6 +20,7 @@ SIMPLECMS_REPLACE_ADMIN_INDEX = True
 
 SOUTH_MIGRATION_MODULES = {
     'zinnia': 'customblog.zinnia_migrations',
+    'schedule': 'core.schedule_migrations',
 }
 ZINNIA_ENTRY_BASE_MODEL = 'customblog.blog_models.BlogEntry'
 ZINNIA_PAGINATION = 5
@@ -73,6 +74,8 @@ INSTALLED_APPS = (
     'zinnia',
     'south',
     'imagetools',
+    'events',
+    'schedule',
     'customblog',  # keep this below zinnia
 )
 
