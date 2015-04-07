@@ -3,20 +3,29 @@
 {% block content %}
 <h2>Termine</h2>
 
+{{ simplecms_page.render.content }}
+
 <ul>
     {% for occurrence in events %}
     <li>
         {% with occurrence.event.eventdescription as ed %}
-        <a href="{{ occurrence.event.eventdescription.get_absolute_url }}">
-        {{ occurrence.title }}
-        {{ occurrence }}
-        {{ eventdescription }}</a>
-        @
+        <a href="{{ occurrence.event.eventdescription.get_absolute_url }}">{{ occurrence.title }},
+
+        {% if occurrence.start.date != occurrence.end.date %}
+            {{ occurrence.start|date:"d.m.Y H:i" }} -
+            {{ occurrence.end|date:"d.m H:i" }}
+        {% else %}
+            {{ occurrence.start|date:"l, d.m.Y, H:i" }} -
+            {{ occurrence.end|date:"H:i" }}
+        {% endif %}
+
+        {{ eventdescription }}</a> @
+
         {% if ed.location.page %}
         <a href="{{ ed.location.page.get_absolute_url }}">
         {% endif %}
         {{ ed.location }}
-        {% if ed.page %}
+        {% if ed.location.page %}
         </a>
         {% endif %}
         {% endwith %}

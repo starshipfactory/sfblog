@@ -11,7 +11,10 @@ class Location(models.Model):
 
 class EventDescription(models.Model):
     cost = models.TextField(default="", blank=True)
-    page = models.ForeignKey("simplecms.Page", blank=True, null=True)
+    page = models.ForeignKey(
+        "simplecms.Page", blank=True, null=True,
+        limit_choices_to={"parent__isnull": False,
+                          'locale': 'de'})
     post = models.ForeignKey("zinnia.Entry", blank=True, null=True)
     location = models.ForeignKey(Location)
     instructor = models.CharField(max_length=128)
