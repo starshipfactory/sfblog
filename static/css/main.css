@@ -495,6 +495,34 @@ div.entry-footer p a {
 #footer a:focus { color: #FFF; }
 #footer a:active { color: #FFF; }
 
+.event-list {
+    padding: 0;
+}
+.event-list li {
+    list-style: none;
+}
+.event-list h3 {
+    margin-bottom: 0;
+}
+.event-datetime {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 10pt;
+}
+.event-more {
+    margin-top: 0;
+}
+.event-props { margin-bottom: 0; margin-top: 5px; }
+.event-props dd { margin-left: 0; }
+.event-props dt {
+    min-width: 70px;
+    float: left;
+    margin-right: 5px;
+}
+.event-props dd {
+    margin-bottom: 10px;
+}
+
 @media only screen and (min-width: 400px) {
     .paginator {
         text-align: left;

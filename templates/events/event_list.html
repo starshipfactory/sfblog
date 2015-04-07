@@ -1,33 +1,51 @@
 {% extends "zinnia/skeleton.html" %}
 
+{% block title %}{{ block.super }}Termine{% endblock %}
+
 {% block content %}
 <h2>Termine</h2>
 
 {{ simplecms_page.render.content }}
 
-<ul>
+<ul class='event-list'>
     {% for occurrence in events %}
     <li>
         {% with occurrence.event.eventdescription as ed %}
-        <a href="{{ occurrence.event.eventdescription.get_absolute_url }}">{{ occurrence.title }},
+        <h3><a href="{{ occurrence.event.eventdescription.get_absolute_url }}">{{ occurrence.title }}</a></h3>
 
+        <p class='event-datetime'>
         {% if occurrence.start.date != occurrence.end.date %}
             {{ occurrence.start|date:"d.m.Y H:i" }} -
-            {{ occurrence.end|date:"d.m H:i" }}
+            {{ occurrence.end|date:"d.m. H:i" }}
         {% else %}
             {{ occurrence.start|date:"l, d.m.Y, H:i" }} -
             {{ occurrence.end|date:"H:i" }}
         {% endif %}
+        </p>
 
-        {{ eventdescription }}</a> @
+        <dl class="event-props">
 
-        {% if ed.location.page %}
-        <a href="{{ ed.location.page.get_absolute_url }}">
-        {% endif %}
-        {{ ed.location }}
-        {% if ed.location.page %}
-        </a>
-        {% endif %}
+            <dt>Ort: </dt>
+            <dd>
+            {% if ed.location.page %}
+            <a href="{{ ed.location.page.get_absolute_url }}">
+            {% endif %}
+
+            {{ ed.location }}
+
+            {% if ed.location.page %}
+            </a>
+            {% endif %}
+            </dd>
+
+            {% if ed.cost %}
+            <dt>Kosten: </dt>
+            <dd>{{ ed.cost }}</dd>
+            {% endif %}
+        </dl>
+
+
+        <p class="event-more"><a href="{{ ed.get_absolute_url }}">Details…</a></p>
         {% endwith %}
     </li>
     {% endfor %}
