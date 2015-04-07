@@ -13,17 +13,22 @@
         {% with occurrence.event.eventdescription as ed %}
         <h3><a href="{{ occurrence.event.eventdescription.get_absolute_url }}">{{ occurrence.title }}</a></h3>
 
-        <p class='event-datetime'>
-        {% if occurrence.start.date != occurrence.end.date %}
-            {{ occurrence.start|date:"d.m.Y H:i" }} -
-            {{ occurrence.end|date:"d.m. H:i" }}
-        {% else %}
-            {{ occurrence.start|date:"l, d.m.Y, H:i" }} -
-            {{ occurrence.end|date:"H:i" }}
-        {% endif %}
-        </p>
-
         <dl class="event-props">
+
+            <dt>Zeit: </dt>
+            <dd>
+            {% if occurrence.start.date != occurrence.end.date %}
+
+                <em>{{ occurrence.start|date:"d.m.Y" }}</em>
+                {{ occurrence.start|date:"H:i" }} -
+                <em>{{ occurrence.end|date:"d.m." }}</em>
+                {{ occurrence.end|date:"H:i" }}
+            {% else %}
+                <em>{{ occurrence.start|date:"l, d.m.Y" }}</em>,
+                {{ occurrence.start|date:"H:i" }} -
+                {{ occurrence.end|date:"H:i" }}
+            {% endif %}
+            </dd>
 
             <dt>Ort: </dt>
             <dd>
