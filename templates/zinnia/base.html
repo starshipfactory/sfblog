@@ -30,12 +30,12 @@
   {% include "zinnia/tags/infobox.html" %}
 </div>
 {% if simplecms_page.is_app_node or not simplecms_page.parent.is_nav_root or simplecms_page.parent.slug != "main" %}
+{{ block.super }}
+
 <div id="widget-categories" class="widget">
   <h3>{% trans "Categories" %}</h3>
   {% get_categories %}
 </div>
-
-{{ block.super }}
 
 <div id="widget-tags" class="widget">
   <h3>{% trans "Tags" %}</h3>
