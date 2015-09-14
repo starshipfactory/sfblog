@@ -199,7 +199,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 AUTH_LDAP_SERVER_URI = (
-    "ldaps://auth.glb.internetputzen.com"
+    "ldaps://auth.uri.internetputzen.com"
 )
 
 import ldap
