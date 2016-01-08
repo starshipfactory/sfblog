@@ -523,6 +523,48 @@ div.entry-footer p a {
     margin-left: 80px;
 }
 
+.banner-wrap {
+    background-color: #FAFAFE;
+    padding-bottom: 5px;
+}
+
+img.banner-image {
+    max-width: 960px;
+    width: 100%;
+    height: auto;
+}
+
+.banner-message {
+    padding: 0px 10px;
+}
+
+.banner-message ul li {
+    list-style-type: none;
+    display: inline;
+    padding-left: 7px;
+}
+
+.banner-message ul li::before {
+    padding-right: 7px;
+    content: "• ";
+}
+
+.banner-message ul li:first-child {
+    padding-left: 0px;
+}
+
+.banner-message ul li:first-child::before {
+    content: "";
+}
+
+.banner-message a,
+.banner-message a:active,
+.banner-message a:hover,
+.banner-message a:link,
+.banner-message a:visited {
+    text-decoration: none;
+}
+
 @media only screen and (min-width: 400px) {
     .paginator {
         text-align: left;
