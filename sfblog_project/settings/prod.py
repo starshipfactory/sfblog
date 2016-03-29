@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
 		"hackerspace-basel.net",
 		"hackerspace-basel.org",
 		"fablab-basel.ch",
+		"ww.starship-factory.ch",
 		"www.starship-factory.ch",
 		"www.starship-factory.com",
 		"www.starship-factory.de",
