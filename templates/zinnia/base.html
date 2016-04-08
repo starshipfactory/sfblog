@@ -29,6 +29,10 @@
   <h3>Über uns</h3>
   {% include "zinnia/tags/infobox.html" %}
 </div>
+<div id="opening_hours" class="widget">
+  <h3>Öffnungszeiten</h3>
+  {% include "zinnia/tags/opening_hours.html" %}
+</div>
 {% if simplecms_page.is_app_node or not simplecms_page.parent.is_nav_root or simplecms_page.parent.slug != "main" %}
 {{ block.super }}
 
