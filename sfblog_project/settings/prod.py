@@ -19,6 +19,9 @@ ALLOWED_HOSTS = [
 		"blog.hackerspace-basel.net",
 		"blog.hackerspace-basel.org",
 		"blog.fablab-basel.ch",
+		"blog.fablabbasel.ch",
+		"blog.makerspace-basel.ch",
+		"blog.makerspacebasel.ch",
 		"starship-factory.ch",
 		"starship-factory.com",
 		"starship-factory.de",
@@ -33,6 +36,9 @@ ALLOWED_HOSTS = [
 		"hackerspace-basel.net",
 		"hackerspace-basel.org",
 		"fablab-basel.ch",
+		"fablabbasel.ch",
+		"makerspace-basel.ch",
+		"makerspacebasel.ch",
 		"ww.starship-factory.ch",
 		"www.starship-factory.ch",
 		"www.starship-factory.com",
@@ -48,6 +54,9 @@ ALLOWED_HOSTS = [
 		"www.hackerspace-basel.net",
 		"www.hackerspace-basel.org",
 		"www.fablab-basel.ch",
+		"www.fablabbasel.ch",
+		"www.makerspace-basel.ch",
+		"www.makerspacebasel.ch",
 		]
 
 DEBUG = False
