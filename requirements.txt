@@ -4,7 +4,7 @@
 #
 #    pip-compile --no-index --output-file requirements.txt requirements.in
 #
--e git+https://github.com/dwaiter/django-ckeditor.git@391ad930ff8f51be7f91943b68ee8df8c58f18ae#egg=django_ckeditor-master
+-e git+https://github.com/dwaiter/django-ckeditor.git@391ad930ff8f51be7f91943b68ee8df8c58f18ae#egg=django-ckeditor
 -e git+ssh://git@git.gc-web.de:222/gcweb/imagetools@0d75f39#egg=imagetools
 -e git+ssh://git@git.gc-web.de:222/gcweb/simplecms@74ce596#egg=simplecms
 akismet==0.2.0
@@ -13,6 +13,7 @@ backports.shutil-get-terminal-size==1.0.0  # via ipython
 beautifulsoup4==4.6.0     # via django-blog-zinnia
 coverage==4.4.1           # via django-scheduler
 decorator==4.1.2          # via ipython, traitlets
+dj-database-url==0.4.2
 django-annoying==0.10.3   # via django-scheduler
 django-auth-ldap==1.2.0
 django-blog-zinnia==0.14.1
@@ -27,8 +28,6 @@ django==1.6.11            # via django-auth-ldap, django-model-utils, django-mpt
 django_sendmail_backend==0.1.2
 enum34==1.1.6             # via traitlets
 future==0.16.0            # via django-scheduler
-gevent==1.0.1
-greenlet==0.4.2
 gunicorn==19.7.1
 icalendar==3.11.7         # via django-scheduler
 ipython-genutils==0.2.0   # via traitlets
@@ -50,6 +49,6 @@ scandir==1.5              # via pathlib2
 setproctitle==1.1.10
 simplegeneric==0.8.1      # via ipython
 six==1.10.0               # via django-scheduler, pathlib2, prompt-toolkit, python-dateutil, traitlets
-south==0.8.4              # via django-scheduler
+south==1.0.2              # via django-scheduler
 traitlets==4.3.2          # via ipython
 wcwidth==0.1.7            # via prompt-toolkit

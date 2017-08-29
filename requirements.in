@@ -1,6 +1,6 @@
 Django==1.6.11
 Pillow
-South==0.8.4
+South>=1.0
 akismet==0.2.0
 django-auth-ldap==1.2.0
 django-blog-zinnia==0.14.1
@@ -10,10 +10,9 @@ django-mptt==0.6.1
 django-oembed==0.1.3
 django_sendmail_backend==0.1.2
 django-tagging==0.3.4
-gevent==1.0.1
-greenlet==0.4.2
+dj-database-url
 gunicorn
--e git+https://github.com/dwaiter/django-ckeditor.git@391ad930ff8f51be7f91943b68ee8df8c58f18ae#egg=django_ckeditor-master
+-e git+https://github.com/dwaiter/django-ckeditor.git@391ad930ff8f51be7f91943b68ee8df8c58f18ae#egg=django-ckeditor
 -e git+ssh://git@git.gc-web.de:222/gcweb/imagetools@0d75f39#egg=imagetools
 -e git+ssh://git@git.gc-web.de:222/gcweb/simplecms@74ce596#egg=simplecms
 ipython<6
