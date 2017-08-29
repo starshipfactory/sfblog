@@ -61,6 +61,9 @@ ALLOWED_HOSTS = [
 
 DEBUG = False
 
+STATIC_ROOT = '/var/www/static/'
+MEDIA_ROOT = '/var/www/media/'
+
 # Some mail destinations which hopefully won't eat the mails.
 ADMINS = (('NGAS Admins', 'admins@ngas.ch'),)
 MANAGERS = ADMINS + (('Public Relations', 'pr@lists.starship-factory.ch'),)
