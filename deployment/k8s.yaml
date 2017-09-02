@@ -1,0 +1,67 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sfblog-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sfblog
+      name: sfblog
+      namespace: default
+    spec:
+      containers:
+      - image: registry.office.internetputzen.com/sfblog:latest
+        imagePullPolicy: IfNotPresent
+        name: sfblog
+        resources: {}
+        #ports:
+        #  - containerPort: 8000
+        env:
+          - name: DJANGO_SETTINGS_MODULE
+            value: sfblog_project.settings.prod
+          - name: SFBLOG_CONFIG_PATH
+            value: /etc/sfblog/
+        volumeMounts:
+        - mountPath: /var/www/static/
+          name: www-data-static
+        - mountPath: /var/www/media/
+          name: www-data-media
+        - mountPath: /etc/sfblog
+          name: secrets
+      - image: registry.office.internetputzen.com/sfblog_nginx:latest
+        imagePullPolicy: IfNotPresent
+        name: sfblog-nginx
+        ports:
+          - containerPort: 80
+        volumeMounts:
+          - mountPath: /var/www/static/
+            name: www-data-static
+          - mountPath: /var/www/media/
+            name: www-data-media
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      securityContext: {}
+      serviceAccount: default
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: secrets
+        secret:
+          secretName: sfblog-secrets
+      - name: www-data-static
+        emptyDir: {}
+      - name: www-data-media
+        rbd:
+          monitors: 
+          - 192.168.23.232:6789
+          - 192.168.23.238:6789
+          pool: rbd
+          image: sfblog-media
+          keyring: /dev/null
+          fsType: ext4
+          readOnly: false
+          secretRef:
+            name: ceph-secret-kubernetes
+          user: kubernetes

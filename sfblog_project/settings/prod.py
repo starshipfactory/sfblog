@@ -1,8 +1,9 @@
 from .base import *  # NOQA
-import dj_database_url
 import os
+import json
 
 os.environ.setdefault('SFBLOG_CONFIG_PATH', '/etc/sfblog')
+SECRETS = json.load(open(os.environ.get('SFBLOG_CONFIG_PATH') + '/secrets.json'))
 
 ALLOWED_HOSTS = [
     "blog.starship-factory.ch",
@@ -57,6 +58,7 @@ ALLOWED_HOSTS = [
     "www.fablabbasel.ch",
     "www.makerspace-basel.ch",
     "www.makerspacebasel.ch",
+    "*",
 ]
 
 DEBUG = False
@@ -72,14 +74,22 @@ EMAIL_BACKEND = 'django_sendmail_backend.backends.EmailBackend'
 # Some security related settings.
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
-SECRET_KEY = os.environ.get('SFBLOG_SECRET_KEY')
+SECRET_KEY = SECRETS['key']
 
 # Settings for life behind a reverse proxy.
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 USE_X_FORWARDED_HOST = True
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=None)
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': SECRETS['pg_dbname'],
+        'USER': SECRETS['pg_user'],
+        'PASSWORD': SECRETS['pg_password'],
+        'HOST': SECRETS['pg_host'],
+        'PORT': SECRETS['pg_port'],
+        'CONN_MAX_AGE': None,
+    }
 }
 
 TEMPLATE_LOADERS = (
@@ -94,7 +104,6 @@ ZINNIA_PROTOCOL = "https"
 ZINNIA_SPAM_CHECKER_BACKENDS = set()
 AKISMET_SECRET_API_KEY = None
 
-if os.path.exists(os.environ.get('SFBLOG_CONFIG_PATH') + '/akismet_secret'):
+if 'akismet_secret' in SECRETS:
     ZINNIA_SPAM_CHECKER_BACKENDS = ('zinnia.spam_checker.backends.automattic',)
-    AKISMET_SECRET_API_KEY = open(os.environ.get('SFBLOG_CONFIG_PATH') +
-                                  '/akismet_secret').read().strip()
+    AKISMET_SECRET_API_KEY = SECRETS['akismet_secret']
