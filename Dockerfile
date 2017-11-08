@@ -5,6 +5,7 @@ RUN apt-get -q -y update
 RUN apt-get -q -y -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confold --purge install git
 
 ADD . /sfblog
+RUN chmod -R a+rX /sfblog
 RUN pip install /sfblog/wheels/*.whl
 RUN rm -r /sfblog/wheels/
 
