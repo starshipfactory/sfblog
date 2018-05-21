@@ -153,13 +153,12 @@ CKEDITOR_CONFIGS = {
             ['NumberedList', 'BulletedList', 'Table'],
             ['Link', 'Unlink'],
             ['Undo', 'Redo', 'Copy', 'PasteText'],
-            ['Source', 'ShowBlocks', 'Maximize'],
+            ['Source', 'Maximize'],
         ],
         #'format_tags': 'p;h3;h4;h5;pre;', FIXME bug in ckeditor?
         'width': 840,
         'height': 300,
         'toolbarCanCollapse': False,
-        'extraPlugins': 'showblocks',
         'language': 'de',
     }
 }
