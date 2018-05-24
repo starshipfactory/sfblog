@@ -26,6 +26,14 @@
       {% trans "Comment as" %} <strong>{% firstof user.get_full_name user.username %}</strong>. <a href="{% url 'admin:logout' %}">{% trans "Log out" %}</a>.
     </p>
     {% endif %}
+    <!-- TODO: translate -->
+    <p>
+     Mit der Übermittlung der Daten durch den Button „{% trans "Post" %}¨
+     erklären Sie Ihr Einverständnis zur Verarbeitung der dabei übertragenen
+     Daten anhand unserer <a href="/datenschutz/">Datenschutzerkläriung</a>,
+     insbesondere der
+     <a href="/datenschutz/#dsg-comments">Bestimmungen über Blogkommentare</a>.
+    </p>
     <p class="submit">
       <input type="submit" name="submit" class="submit-post" value="{% trans "Post" %}" />
       <input type="submit" name="preview" class="submit-preview" value="{% trans "Preview" %}" />
