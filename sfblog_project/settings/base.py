@@ -198,7 +198,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 AUTH_LDAP_SERVER_URI = (
-    "ldaps://openldap-master.ancient-solutions.svc.eur.internetputzen.com"
+    "ldaps://ldap.starship-factory.ch"
 )
 
 import ldap
